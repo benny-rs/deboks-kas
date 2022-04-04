@@ -1,1 +1,1 @@
-# PPL C3 (deboks-chips)
+# PPL C3 (deboks-kas)
