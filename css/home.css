@@ -56,3 +56,33 @@ nav{
     background-color: var(--color2);
     margin-left: 30px;
 }
+
+
+.container {
+    padding: 0 50px;
+    /* height: 100vh; */
+    /* display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly; */
+}
+
+.main-menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    /* border: 1px solid rgba(255, 255, 255, 0.125); */
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+    flex: 1;
+    max-width: 350px;
+}
