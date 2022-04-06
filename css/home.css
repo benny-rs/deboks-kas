@@ -67,6 +67,10 @@ nav{
     justify-content: space-evenly; */
 }
 
+.container h1{
+    margin: 25px 0 40px 0;
+}
+
 .main-menu{
     display: flex;
     flex-direction: row;
