@@ -68,3 +68,17 @@ button{
     cursor: pointer;
     font-size: 18;
 }
+
+@media (max-width: 768px){
+    .container{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .desc{
+        text-align: center;
+        padding-bottom: 20px;
+    }
+    .login-box{
+        flex: 0;
+    }
+}
