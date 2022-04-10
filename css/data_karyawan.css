@@ -1,6 +1,8 @@
 :root{
     --color1: #7E57C2;
     --color2: #F4EEFF;
+    --color-edit: #0094FF;
+    --color-red: #FF0000;
     --border-radius: 20px;
     --box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
     font-family: 'Inter', sans-serif;
@@ -71,10 +73,11 @@ nav{
 }
 
 .card {
-    /* min-width: 170px; */
-    /* max-width: 200px; */
+    /* min-width: 170px;
+    max-width: 200px; */
+    max-height: 230px;
     border-radius: var(--border-radius);
-    aspect-ratio: 1;
+    /* aspect-ratio: 1; */
     box-shadow: var(--box-shadow);
     padding: 20px;
     position: relative;
@@ -82,6 +85,7 @@ nav{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .employee-photo{
@@ -102,4 +106,38 @@ nav{
 .employee-email,.employee-username, .employee-phone{
     font-size: 14px;
     color: var(--color1);
+}
+
+.action{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.card a{
+    text-decoration: none;
+}
+
+.edit{
+    color: var(--color-edit);
+    margin-right: 40px;
+}
+
+.delete{
+    color: var(--color-red);
+}
+
+.add-employee{
+    background-color: var(--color1);
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    color: white;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
