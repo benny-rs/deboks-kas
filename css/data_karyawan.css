@@ -192,7 +192,7 @@ input[type="text"],input[type="email"]{
     font-size: 14px;
     /* margin-top: 10px; */
     margin-bottom: 15px;
-    width: 420px;
+    /* width: 420px; */
 }
 
 input[type="file"]{
