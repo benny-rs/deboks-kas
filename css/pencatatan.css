@@ -73,3 +73,21 @@ table{
 td{
     text-align: center;
 }
+
+.date-picker{
+    border: none;
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    background-color: transparent;
+    text-align: center;
+}
+
+/* .table-condensed thead tr:nth-child(2),
+.table-condensed tbody {
+  display: none
+} */
+
+.ui-datepicker-calendar {
+    display: none;
+}
