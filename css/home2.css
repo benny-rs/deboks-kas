@@ -2,6 +2,11 @@
     --color1: #7E57C2;
     --color2: #F4EEFF;
     --color-edit: #0094FF;
+
+    --color-data-green: #00DA16;
+    --color-data-blue: #0071DA;
+    --color-data-yellow: #DAD100;
+
     --border-radius: 20px;
     --box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
     font-family: 'Inter', sans-serif;
@@ -73,7 +78,7 @@ nav{
     justify-content: space-evenly; */
 }
 
-.container p, .container h3{
+.container p, .container h3,h4{
     margin: 0;
 }
 
@@ -103,7 +108,7 @@ aside a{
     justify-content: center;
 }
 
-.main-data {  
+/* .main-data {  
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -114,12 +119,32 @@ aside a{
       "pemasukan pengeluaran laba";
     background-color: burlywood;
     width: 100%;
+} */
+
+/* .main-data{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
+    grid-gap: 1.3rem;
+    position: relative;
+    width: 100%;
+} */
+
+.main-data{
+    display: flex;
+    flex-direction: column;
+    /* background-color: aqua; */
+    width: 100%;
+}
+
+.warung-grafik{
+    display: flex;
+    flex-direction: row;
+    background-color: cadetblue;
+    justify-content: space-between;
 }
 
 .warung { 
-    grid-area: warung;
-    background-color: aqua;
-    padding: 20px;
+    flex: 1;
 }
 
 .card {
@@ -160,13 +185,48 @@ aside a{
     border-radius: 10px;
 }
 
-.produk-terbeli { grid-area: produk-terbeli; }
+.produk{
+    background-color: antiquewhite;
+    flex: 1;
+}
 
-.grafik { grid-area: grafik; }
+.produk p{
+    margin-top: 40px;
+    font-size: 16px;
+}
 
-.pemasukan { grid-area: pemasukan; }
+.produk .data h3{
+    font-size: 42px;
+}
 
-.pengeluaran { grid-area: pengeluaran; }
+.produk h4{
+    font-size: 32px;
+}
 
-.laba { grid-area: laba; }
-  
+.produk .data span{
+    font-size: 20px;
+}
+
+.produk .total{
+    color: var(--color-data-green);
+}
+
+.produk .bulan-ini{
+    color: var(--color-data-blue);
+}
+
+.grafik{
+    flex: 1;
+}
+
+.keuangan{
+    display: flex;
+    flex-direction: row;
+    background-color: coral;
+    justify-content: space-between;
+}
+
+.pemasukan{
+    flex: 1;
+}
+
