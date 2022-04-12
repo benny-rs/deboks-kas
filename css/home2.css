@@ -1,0 +1,172 @@
+:root{
+    --color1: #7E57C2;
+    --color2: #F4EEFF;
+    --color-edit: #0094FF;
+    --border-radius: 20px;
+    --box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+    font-family: 'Inter', sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+nav{
+    background-color: var(--color1);
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    color: white;
+    padding: 0 25px;
+}
+
+.title{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: start;
+    align-items: center;
+    visibility: hidden;
+}
+
+.title span{
+    margin-right: 40px;
+}
+
+.month{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.account{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: end;
+    align-items: center;
+}
+
+.profile-photo{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: var(--color2);
+    margin-left: 30px;
+}
+
+
+.container {
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    /* padding: 0 50px; */
+    /* height: 100vh; */
+    /* display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly; */
+}
+
+.container p, .container h3{
+    margin: 0;
+}
+
+aside{
+    background-color: var(--color2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding: 0 20px;
+}
+
+aside a{
+    text-decoration: none;
+    background-color: var(--color1);
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    margin-top: 15px;
+    /* cursor: pointer; */
+    /* padding: 10px 15px; */
+    border-radius: 10px;
+    width: 200px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-data {  
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "warung produk-terbeli grafik"
+      "pemasukan pengeluaran laba";
+    background-color: burlywood;
+    width: 100%;
+}
+
+.warung { 
+    grid-area: warung;
+    background-color: aqua;
+    padding: 20px;
+}
+
+.card {
+    /* min-width: 170px; */
+    max-width: 250px;
+    /* max-height: 130px; */
+    border-radius: var(--border-radius);
+    /* aspect-ratio: 1; */
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    position: relative;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.card p{
+    font-size: 14px;
+    color: var(--color1);
+}
+
+.card h3{
+    margin: 10px;   
+}
+
+.card button{
+    color: white;
+    border: none;
+    background-color: var(--color-edit);
+    margin: 20px 0;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.produk-terbeli { grid-area: produk-terbeli; }
+
+.grafik { grid-area: grafik; }
+
+.pemasukan { grid-area: pemasukan; }
+
+.pengeluaran { grid-area: pengeluaran; }
+
+.laba { grid-area: laba; }
+  
