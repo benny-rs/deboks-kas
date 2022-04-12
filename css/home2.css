@@ -134,13 +134,14 @@ aside a{
     flex-direction: column;
     /* background-color: aqua; */
     width: 100%;
+    padding: 20px 40px 0 40px;
 }
 
 .warung-grafik{
     display: flex;
     flex-direction: row;
-    background-color: cadetblue;
     justify-content: space-between;
+    margin-bottom: 90px;
 }
 
 .warung { 
@@ -186,7 +187,6 @@ aside a{
 }
 
 .produk{
-    background-color: antiquewhite;
     flex: 1;
 }
 
@@ -222,11 +222,30 @@ aside a{
 .keuangan{
     display: flex;
     flex-direction: row;
-    background-color: coral;
     justify-content: space-between;
 }
 
-.pemasukan{
+.data-keuangan {
     flex: 1;
 }
 
+.data-keuangan  h3{
+    font-size: 28px;
+    margin-bottom: 22px;
+}
+
+.data-keuangan  h4{
+    font-size: 24px;
+}
+
+.pemasukan .total{
+    color: var(--color-data-blue);
+}
+
+.pengeluaran .total{
+    color: var(--color-data-yellow);
+}
+
+.laba .total{
+    color: var(--color-data-green);
+}
