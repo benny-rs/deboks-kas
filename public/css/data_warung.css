@@ -75,7 +75,7 @@ nav{
 .card {
     /* min-width: 170px;
     max-width: 200px; */
-    max-height: 130px;
+    max-height: 150px;
     border-radius: var(--border-radius);
     /* aspect-ratio: 1; */
     box-shadow: var(--box-shadow);
@@ -94,7 +94,8 @@ nav{
     color: var(--color1);
 }
 
-.card button{
+.card a{
+    text-decoration: none;
     color: white;
     border: none;
     background-color: var(--color-edit);

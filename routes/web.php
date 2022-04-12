@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Warung;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,21 @@ Route::get('/', function () {
 
 Route::get('/login', function(){
     return view('login');
+});
+
+Route::get('/karyawan', function(){
+    return view('data_karyawan');
+});
+
+Route::get('/warung', function(){
+    return view('data_warung', [
+        "data" => Warung::all()
+    ]);
+});
+
+Route::get('/pencatatan/{id}', function($id){
+    return view('pencatatan', [
+        "id" => $id,
+        "nama" => Warung::find($id)
+    ]);
 });

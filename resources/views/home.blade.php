@@ -33,8 +33,8 @@
     </nav>
     <div class="container">
         <aside class="nav">
-            <a href="">Data Karyawan</a>
-            <a href="">Data Warung</a>
+            <a href="/karyawan">Data Karyawan</a>
+            <a href="/warung">Data Warung</a>
         </aside>
         <div class="main-data">
             <!-- <div class="warung">
