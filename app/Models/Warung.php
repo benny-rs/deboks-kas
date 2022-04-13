@@ -16,7 +16,7 @@ class Warung extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function pencatatan(): HasMany
+    public function pencatatan()
     {
         return $this->hasMany(Pencatatan::class, 'id_warung', 'id');
     }

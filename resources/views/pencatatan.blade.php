@@ -26,7 +26,7 @@
     <nav>
         <div class="title">
             <span class="material-icons">arrow_back</span>
-            <h2>{{ $nama }}</h2>
+            <h2>{{ $data->nama }}</h2>
         </div>
         <div class="month">
             <!-- <h2>Bulan Januari - 2022</h2> -->
@@ -52,20 +52,15 @@
                 <th>Pengeluaran</th>
                 <th>Pendapatan</th>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>27</td>
-                <td>Rp 120.000</td>
-                <td>Rp 120.000</td>
-                <td>Rp 120.000</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>27</td>
-                <td>Rp 120.000</td>
-                <td>Rp 120.000</td>
-                <td>Rp 120.000</td>
-            </tr>
+            @foreach($data->pencatatan as $pencatatan)
+                <tr>
+                    <td>{{ $pencatatan->minggu_ke }}</td>
+                    <td>{{ $pencatatan->produk_terbeli }}</td>
+                    <td>Rp {{ $pencatatan->pemasukan }}</td>
+                    <td>Rp {{ $pencatatan->pengeluaran}}</td>
+                    <td>Rp {{ $pencatatan->pemasukan-$pencatatan->pengeluaran}}</td>
+                </tr>
+            @endforeach
             <tr>
                 <th>Total</th>
                 <th>54</th>
