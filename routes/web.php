@@ -1,7 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Warung;
+use App\Http\Controllers\WarungController;
+use App\Http\Controllers\PencatatanController;
+use App\Http\Controllers\KaryawanController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,27 +18,8 @@ use App\Models\Warung;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
-Route::get('/login', function(){
-    return view('login');
-});
-
-Route::get('/karyawan', function(){
-    return view('data_karyawan');
-});
-
-Route::get('/warung', function(){
-    return view('data_warung', [
-        "data" => Warung::all()
-    ]);
-});
-
-Route::get('/pencatatan/{id}', function($id){
-    return view('pencatatan', [
-        "id" => $id,
-        "nama" => Warung::find($id)
-    ]);
-});
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index']);
+Route::get('/karyawan', [KaryawanController::class, 'index']);
+Route::get('/warung', [WarungController::class, 'index']);
+Route::get('/pencatatan/{id}', [PencatatanController::class, 'index']);
