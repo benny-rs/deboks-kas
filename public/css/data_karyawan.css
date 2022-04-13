@@ -184,7 +184,7 @@ nav{
     to{scale: 1}
 }
 
-input[type="text"],input[type="email"]{
+input[type="text"],input[type="email"],input[type="password"]{
     padding: 15px;
     border-radius: var(--border-radius);
     border: var(--color1) 1px solid;

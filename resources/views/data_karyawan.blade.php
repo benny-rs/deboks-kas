@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>Data Karyawan</title>
     <link rel="stylesheet" href="/css/data_karyawan.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,25 +49,26 @@
         </span></button>
     
     <div id="modal-overlay">
-        <div class="modal-box">
+        <form class="modal-box" id="karyawan-form" method="POST" enctype="multipart/form-data">
+            @csrf
             <div class="modal-head">
                 <h3>Data Karyawan</h3>
             </div>
             <div class="modal-content">
-                <input type="text" class="nama" placeholder="Nama">
-                <input type="email" class="email" placeholder="Email">
-                <input type="text" class="username" placeholder="Username">
-                <input type="text" class="password" placeholder="Password">
-                <input type="text" class="alamat" placeholder="Alamat">
-                <input type="text" class="nohp" placeholder="No. HP">
+                <input type="text" class="nama" placeholder="Nama" id="nama">
+                <input type="email" class="email" placeholder="Email" id="email">
+                <input type="text" class="username" placeholder="Username" id="username">
+                <input type="password" class="password" placeholder="Password" id="password">
+                <input type="text" class="alamat" placeholder="Alamat" id="alamat">
+                <input type="text" class="nohp" placeholder="No. HP" id="nohp">
                 <label for="employee-file-photo">Profile Photo</label>
                 <input type="file" name="employee-file-photo" id="employee-file-photo">
             </div>
             <div class="modal-footer">
-                <button id="cancel-modal">Cancel</button>
-                <button id="submit-modal">Submit</button>
+                <button id="cancel-modal" type="button">Cancel</button>
+                <button id="submit-modal" type="submit">Submit</button>
             </div>
-        </div>
+        </form>
     </div>
     <script src="/js/data-karyawan.js"></script>
 </body>

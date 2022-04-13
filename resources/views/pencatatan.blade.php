@@ -57,8 +57,8 @@
                     <td>{{ $pencatatan->minggu_ke }}</td>
                     <td>{{ $pencatatan->produk_terbeli }}</td>
                     <td>Rp {{ $pencatatan->pemasukan }}</td>
-                    <td>Rp {{ $pencatatan->pengeluaran}}</td>
-                    <td>Rp {{ $pencatatan->pemasukan-$pencatatan->pengeluaran}}</td>
+                    <td>Rp {{ $pencatatan->pengeluaran }}</td>
+                    <td>Rp {{ $pencatatan->pemasukan-$pencatatan->pengeluaran }}</td>
                 </tr>
             @endforeach
             <tr>

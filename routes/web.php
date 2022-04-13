@@ -19,7 +19,12 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', [HomeController::class, 'index']);
+
 Route::get('/login', [LoginController::class, 'index']);
+
 Route::get('/karyawan', [KaryawanController::class, 'index']);
+Route::post('/karyawan/add', [KaryawanController::class, 'tambah']);
+
 Route::get('/warung', [WarungController::class, 'index']);
+
 Route::get('/pencatatan/{warung}', [PencatatanController::class, 'index']);
