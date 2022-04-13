@@ -29,28 +29,19 @@
         </div>
     </nav>
     <div class="container">
-        <div class="card">
-            <div class="employee-photo" style="background-image: url(https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80);"></div>
-            <h3 class="employee-name">Ahmad Andriyan</h3>
-            <p class="employee-email">andriyan@mail.com</p>
-            <p class="employee-username">andriyan123</p>
-            <p class="employee-phone">081234567890</p>
-            <div class="action">
-                <a href="" class="edit">EDIT</a>
-                <a href="" class="delete">DELETE</a>
+        @foreach($data as $user)
+            <div class="card">
+                <div class="employee-photo" style="background-image: url({{ $user->foto_profil }});"></div>
+                <h3 class="employee-name">{{ $user->nama }}</h3>
+                <p class="employee-email">{{ $user->email }}</p>
+                <p class="employee-username">{{ $user->username }}</p>
+                <p class="employee-phone">{{ $user->nohp }}</p>
+                <div class="action">
+                    <a href="" class="edit">EDIT</a>
+                    <a href="" class="delete">DELETE</a>
+                </div>
             </div>
-        </div>
-        <div class="card">
-            <div class="employee-photo" style="background-image: url(https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80);"></div>
-            <h3 class="employee-name">Ahmad Andriyan</h3>
-            <p class="employee-email">andriyan@mail.com</p>
-            <p class="employee-username">andriyan123</p>
-            <p class="employee-phone">081234567890</p>
-            <div class="action">
-                <a href="" class="edit">EDIT</a>
-                <a href="" class="delete">DELETE</a>
-            </div>
-        </div>
+        @endforeach
     </div>
     <button id="add-employee"><span class="material-icons">
         add

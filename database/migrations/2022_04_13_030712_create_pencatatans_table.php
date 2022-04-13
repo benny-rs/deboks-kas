@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('produk_terbeli');
             $table->integer('pemasukan');
             $table->integer('pengeluaran');
+            $table->integer('minggu_ke');
             $table->timestamps();
         });
     }
