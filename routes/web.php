@@ -22,4 +22,4 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/login', [LoginController::class, 'index']);
 Route::get('/karyawan', [KaryawanController::class, 'index']);
 Route::get('/warung', [WarungController::class, 'index']);
-Route::get('/pencatatan/{id}', [PencatatanController::class, 'index']);
+Route::get('/pencatatan/{warung}', [PencatatanController::class, 'index']);

@@ -8,10 +8,10 @@ use App\Models\Warung;
 class PencatatanController extends Controller
 {
     //
-    public function index($id){
+    public function index(Warung $warung){
         return view('pencatatan', [
-            "id" => $id,
-            "nama" => Warung::find($id)['nama']
+            // "id" => $id,
+            "nama" => $warung->nama
         ]);
     }
 }
