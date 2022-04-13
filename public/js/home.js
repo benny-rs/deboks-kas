@@ -1,3 +1,11 @@
+$('.profile-photo').click(function(){
+    if($('#account-dropdown').css('display')=='none'){
+        $('#account-dropdown').show()
+    }else{
+        $('#account-dropdown').hide()
+    }
+})
+
 const ctx = document.getElementById('myChart').getContext('2d');
 const myChart = new Chart(ctx, {
     type: 'bar',

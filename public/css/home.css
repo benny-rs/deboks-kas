@@ -54,6 +54,8 @@ nav{
     flex: 1;
     justify-content: end;
     align-items: center;
+
+    position: relative;
 }
 
 .profile-photo{
@@ -64,6 +66,33 @@ nav{
     margin-left: 30px;
 }
 
+#account-dropdown{
+    display: none;
+    z-index: 1;
+    position: absolute;
+    top: 100%;
+    right: 5%;
+    /* background-color: cadetblue; */
+    /* width: 100px; */
+    /* height: 100px; */
+    border: 1px solid grey;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* .profile-photo:hover + .account-dropdown{
+    display: block;
+} */
+
+.btn-logout{
+    border: none;
+    background-color: var(--color1);
+    padding: 10px 30px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
 .container {
     max-width: 100%;

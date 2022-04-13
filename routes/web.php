@@ -18,13 +18,15 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->middleware('auth');
 
-Route::get('/login', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'auth']);
+Route::get('/logout', [LoginController::class, 'logout']);
 
-Route::get('/karyawan', [KaryawanController::class, 'index']);
-Route::post('/karyawan/add', [KaryawanController::class, 'tambah']);
+Route::get('/karyawan', [KaryawanController::class, 'index'])->middleware('auth');
+Route::post('/karyawan/add', [KaryawanController::class, 'tambah'])->middleware('auth');
 
-Route::get('/warung', [WarungController::class, 'index']);
+Route::get('/warung', [WarungController::class, 'index'])->middleware('auth');
 
-Route::get('/pencatatan/{warung}', [PencatatanController::class, 'index']);
+Route::get('/pencatatan/{warung}', [PencatatanController::class, 'index'])->middleware('auth');

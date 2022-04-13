@@ -62,7 +62,7 @@
                 <input type="text" class="alamat" placeholder="Alamat" id="alamat">
                 <input type="text" class="nohp" placeholder="No. HP" id="nohp">
                 <label for="employee-file-photo">Profile Photo</label>
-                <input type="file" name="employee-file-photo" id="employee-file-photo">
+                <input type="file" name="foto_profil" id="employee-file-photo">
             </div>
             <div class="modal-footer">
                 <button id="cancel-modal" type="button">Cancel</button>

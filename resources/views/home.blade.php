@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <!-- chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"
@@ -27,8 +28,13 @@
             <h2>Bulan Januari - 2022</h2>
         </div>
         <div class="account">
-            <p>Admin</p>
+            <p>{{ auth()->user()->nama }}</p>
             <div class="profile-photo"></div>
+            <div id="account-dropdown">
+                <form action="/logout" method="get">
+                    <button type="submit" class="btn-logout">Logout</button>
+                </form>
+            </div>
         </div>
     </nav>
     <div class="container">

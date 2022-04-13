@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class KaryawanController extends Controller
 {
@@ -15,7 +16,7 @@ class KaryawanController extends Controller
     }
 
     public function tambah(Request $request){
-        $validated = $request->validate([
+        $validatedData = $request->validate([
             'nama' => 'required',
             'email' => 'required|email|unique:users',
             'username' => 'required|unique:users',
@@ -24,6 +25,12 @@ class KaryawanController extends Controller
             'alamat' => 'nullable'
         ]);
         // return $request->all();
-        return $validated;
+        // return $validatedData;
+        $validatedData['password'] = Hash::make($validatedData['password']);
+        User::create($validatedData);
+        
+        return view('add_karyawan', [
+            "data" => User::where('is_admin',false)->get()
+        ]);
     }
 }

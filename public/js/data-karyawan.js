@@ -25,7 +25,7 @@ $('#karyawan-form').submit(function (e) {
             nohp: $('#nohp').val()
         },
         function (data) {
-            console.log(data);
+            $('.container').html(data);
         })
         .always(function () {
             $('#modal-overlay').hide();

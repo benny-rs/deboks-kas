@@ -15,7 +15,11 @@
         <div class="desc"><h1>DeboksKas</h1></div>
         <div class="login-box">
             <h2>LOGIN</h2>
-            <form action="" method="post">
+            @if(session()->has('loginError'))
+                <p style="color:red;margin-bottom: 5px">{{ session('loginError') }}</p>
+            @endif
+            <form action="/login" method="post">
+                @csrf
                 <input type="text" name="username" id="username" placeholder="Username">
                 <input type="password" name="password" id="password" placeholder="Password">
                 <button type="submit">Login</button>
