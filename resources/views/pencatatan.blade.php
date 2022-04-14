@@ -40,7 +40,13 @@
         </div>
         <div class="account">
             <p>{{ auth()->user()->nama }}</p>
-            <div class="user-photo"></div>
+            <div class="profile-photo"></div>
+            <div id="account-dropdown">
+                <form action="/logout" method="post">
+                    @csrf
+                    <button type="submit" class="btn-logout">Logout</button>
+                </form>
+            </div>
         </div>
     </nav>
     <div class="container">

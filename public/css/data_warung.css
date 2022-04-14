@@ -48,14 +48,36 @@ nav{
     flex: 1;
     justify-content: end;
     align-items: center;
+    position: relative;
 }
 
-.user-photo{
+.profile-photo{
     width: 40px;
     height: 40px;
     border-radius: 100%;
     background-color: var(--color2);
     margin-left: 30px;
+}
+
+#account-dropdown{
+    display: none;
+    z-index: 1;
+    position: absolute;
+    top: 100%;
+    right: 5%;
+    border: 1px solid grey;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.btn-logout{
+    border: none;
+    background-color: var(--color1);
+    padding: 10px 30px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .container{

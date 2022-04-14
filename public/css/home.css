@@ -54,7 +54,6 @@ nav{
     flex: 1;
     justify-content: end;
     align-items: center;
-
     position: relative;
 }
 
@@ -72,18 +71,11 @@ nav{
     position: absolute;
     top: 100%;
     right: 5%;
-    /* background-color: cadetblue; */
-    /* width: 100px; */
-    /* height: 100px; */
     border: 1px solid grey;
     background-color: white;
     border-radius: 5px;
     padding: 10px;
 }
-
-/* .profile-photo:hover + .account-dropdown{
-    display: block;
-} */
 
 .btn-logout{
     border: none;
