@@ -31,7 +31,8 @@
             <p>{{ auth()->user()->nama }}</p>
             <div class="profile-photo"></div>
             <div id="account-dropdown">
-                <form action="/logout" method="get">
+                <form action="/logout" method="post">
+                    @csrf
                     <button type="submit" class="btn-logout">Logout</button>
                 </form>
             </div>

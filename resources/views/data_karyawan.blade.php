@@ -18,14 +18,14 @@
 <body>
     <nav>
         <div class="title">
-            <span class="material-icons">arrow_back</span>
+            <a href="javascript:window.location = document.referrer;" style="color:white;"><span class="material-icons">arrow_back</span></a>
             <h2>Data Karyawan</h2>
         </div>
         <div class="month">
             <h2>Bulan Januari - 2022</h2>
         </div>
         <div class="account">
-            <p>Admin</p>
+            <p>{{ auth()->user()->nama }}</p>
             <div class="user-photo"></div>
         </div>
     </nav>
@@ -38,8 +38,8 @@
                 <p class="employee-username">{{ $user->username }}</p>
                 <p class="employee-phone">{{ $user->nohp }}</p>
                 <div class="action">
-                    <a href="" class="edit">EDIT</a>
-                    <a href="" class="delete">DELETE</a>
+                    <button type="button" class="edit">EDIT</button>
+                    <button type="button" class="delete" onclick="hapusKaryawan({{ $user->id }})" >DELETE</button>
                 </div>
             </div>
         @endforeach

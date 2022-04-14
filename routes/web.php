@@ -22,10 +22,11 @@ Route::get('/', [HomeController::class, 'index'])->middleware('auth');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'auth']);
-Route::get('/logout', [LoginController::class, 'logout']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/karyawan', [KaryawanController::class, 'index'])->middleware('auth');
 Route::post('/karyawan/add', [KaryawanController::class, 'tambah'])->middleware('auth');
+Route::post('/karyawan/delete', [KaryawanController::class, 'hapus'])->middleware('auth');
 
 Route::get('/warung', [WarungController::class, 'index'])->middleware('auth');
 

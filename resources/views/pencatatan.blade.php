@@ -25,7 +25,7 @@
 <body>
     <nav>
         <div class="title">
-            <span class="material-icons">arrow_back</span>
+            <a href="javascript:window.location = document.referrer;" style="color:white;"><span class="material-icons">arrow_back</span></a>
             <h2>{{ $data->nama }}</h2>
         </div>
         <div class="month">
@@ -39,7 +39,7 @@
             http://jsfiddle.net/DBpJe/5106 -->
         </div>
         <div class="account">
-            <p>Admin</p>
+            <p>{{ auth()->user()->nama }}</p>
             <div class="user-photo"></div>
         </div>
     </nav>

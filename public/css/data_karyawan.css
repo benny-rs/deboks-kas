@@ -121,10 +121,18 @@ nav{
 .edit{
     color: var(--color-edit);
     margin-right: 40px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
 }
 
 .delete{
     color: var(--color-red);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
 }
 
 #add-employee{

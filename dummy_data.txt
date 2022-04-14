@@ -12,10 +12,10 @@ Warung::create([
 
 User::create([
 	'is_admin' => true,
-	'username' => 'rinasw',
+	'username' => 'budi123',
 	'password' => bcrypt('12345'),
-	'nama' => 'Rina Sri Wahyuni',
-	'email' => 'rina@mail.com',
+	'nama' => 'Budi Saputra',
+	'email' => 'budi@mail.com',
 	'alamat' => 'Jalan Raden Patah no 81',
 	'nohp' => '081234567890',
 	'foto_profil' => 'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'

@@ -29,7 +29,16 @@ class KaryawanController extends Controller
         $validatedData['password'] = Hash::make($validatedData['password']);
         User::create($validatedData);
         
-        return view('add_karyawan', [
+        return view('update_karyawan', [
+            "data" => User::where('is_admin',false)->get()
+        ]);
+    }
+
+    public function hapus(Request $request){
+        User::destroy($request->id);
+
+        // return 'masuk hapus';
+        return view('update_karyawan', [
             "data" => User::where('is_admin',false)->get()
         ]);
     }
