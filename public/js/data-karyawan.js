@@ -81,7 +81,7 @@ function hapusKaryawan(id) {
             },
             function (data) {
                 $('.container').html(data);
-                alert('Data berhasil dihapus!');
+                // alert('Data berhasil dihapus!');
                 // console.log(data)
             })
             .always(function (data) {

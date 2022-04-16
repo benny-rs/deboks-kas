@@ -18,7 +18,7 @@ class KaryawanController extends Controller
     public function tambah(Request $request){
         $validatedData = $request->validate([
             'nama' => 'required',
-            'email' => 'required|email|unique:users',
+            'email' => 'required|email:dns|unique:users',
             'username' => 'required|unique:users',
             'password' => 'required|min:3',
             'nohp' => 'nullable',

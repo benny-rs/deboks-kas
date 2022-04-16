@@ -38,7 +38,7 @@
                 <h3>{{ $warung['nama'] }}</h3>
                 <p>{{ $warung['nohp'] }}</p>
                 <p>{{ $warung['alamat'] }}</p>
-                <a href="/pencatatan/{{ $warung['id'] }}">PENCATATAN</a>
+                <a href="/pencatatan/{{ $warung['id'] }}/{{ idate('Y') }}/{{ idate('m') }}">PENCATATAN</a>
             </div>
         @endforeach
     </div>

@@ -30,4 +30,12 @@ Route::post('/karyawan/delete', [KaryawanController::class, 'hapus'])->middlewar
 
 Route::get('/warung', [WarungController::class, 'index'])->middleware('auth');
 
-Route::get('/pencatatan/{warung}', [PencatatanController::class, 'index'])->middleware('auth');
+Route::get('/pencatatan/{id_warung}/{tahun}/{bulan}', [PencatatanController::class, 'index'])->middleware('auth');
+
+Route::get('/dp', function(){
+    return view('datepicker');
+});
+
+Route::get('/pdp', function(){
+    return view('pencatatan_dp');
+});
