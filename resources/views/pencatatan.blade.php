@@ -23,7 +23,7 @@
 <body>
     <nav>
         <div class="title">
-            <a href="javascript:window.location = document.referrer;" style="color:white;"><span class="material-icons">arrow_back</span></a>
+            <a href="/warung" style="color:white;"><span class="material-icons">arrow_back</span></a>
             <h2>{{ $warung->nama }}</h2>
             <input type="hidden" id="id_warung" value="{{ $warung->id }}">
         </div>
@@ -68,15 +68,15 @@
             @endforeach
             <tr>
                 <th>Total</th>
-                <th>54</th>
-                <th>Rp 240.000</th>
-                <th>Rp 240.000</th>
-                <th>Rp 240.000</th>
+                <th>{{ $data->sum('produk_terbeli') }}</th>
+                <th>Rp {{ $data->sum('pemasukan') }}</th>
+                <th>Rp {{ $data->sum('pengeluaran') }}</th>
+                <th>Rp {{ $data->sum('pemasukan')-$data->sum('pengeluaran') }}</th>
             </tr>
         </table>
     </div>
     
-    <script src="/js/pencatatan2.js"></script>
+    <script src="/js/pencatatan.js"></script>
 </body>
 
 </html>

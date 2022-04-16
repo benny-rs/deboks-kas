@@ -15,7 +15,7 @@
 <body>
     <nav>
         <div class="title">
-            <a href="javascript:window.location = document.referrer;" style="color:white;"><span class="material-icons">arrow_back</span></a>
+            <a href="/" style="color:white;"><span class="material-icons">arrow_back</span></a>
             <h2>Data Warung</h2>
         </div>
         <div class="month">
