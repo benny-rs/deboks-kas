@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 class KaryawanController extends Controller
 {
     //
-    public function index(){
+    public function lihat(){
         return view('data_karyawan', [
             "data" => User::where('is_admin',false)->get()
         ]);
@@ -38,6 +38,25 @@ class KaryawanController extends Controller
         User::destroy($request->id);
 
         // return 'masuk hapus';
+        return view('update_karyawan', [
+            "data" => User::where('is_admin',false)->get()
+        ]);
+    }
+
+    public function edit(Request $request){
+        $validatedData = $request->validate([
+            'nama' => 'required',
+            'email' => 'required|email:dns',
+            'username' => 'required',
+            'password' => 'required|min:3',
+            'nohp' => 'nullable',
+            'alamat' => 'nullable'
+        ]);
+        // return $request->all();
+        // return $validatedData;
+        $validatedData['password'] = Hash::make($validatedData['password']);
+        User::where('id', $request->id)->update($validatedData);
+        
         return view('update_karyawan', [
             "data" => User::where('is_admin',false)->get()
         ]);

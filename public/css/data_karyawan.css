@@ -149,7 +149,7 @@ nav{
     font-size: 18px;
 }
 
-.delete{
+.hapus{
     color: var(--color-red);
     background-color: transparent;
     border: none;
@@ -157,7 +157,7 @@ nav{
     font-size: 18px;
 }
 
-#add-employee{
+#tambah-karyawan{
     background-color: var(--color1);
     position: fixed;
     bottom: 40px;
@@ -172,7 +172,7 @@ nav{
     justify-content: center;
 }
 
-#modal-overlay{
+#tambah-modal-overlay, #edit-modal-overlay{
     background-color: rgba(0,0,0,.4);
     position: fixed;
     z-index: 1;
@@ -238,7 +238,7 @@ input[type="file"]{
     justify-content: end;
 }
 
-#cancel-modal{
+#tambah-cancel-modal, #edit-cancel-modal{
     border: 2px var(--color1) solid;
     padding: 10px 20px;
     background-color: transparent;

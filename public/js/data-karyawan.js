@@ -6,12 +6,12 @@ $('.profile-photo').click(function(){
     }
 })
 
-$('#cancel-modal').click(function () {
-    $('#modal-overlay').hide();
+$('#tambah-cancel-modal').click(function () {
+    $('#tambah-modal-overlay').hide();
 })
 
-$('#add-employee').click(function () {
-    $('#modal-overlay').show();
+$('#tambah-karyawan').click(function () {
+    $('#tambah-modal-overlay').show();
 })
 
 $.ajaxSetup({
@@ -20,23 +20,23 @@ $.ajaxSetup({
     }
 });
 
-$('#karyawan-form').submit(function (e) {
+$('#tambah-karyawan-form').submit(function (e) {
     e.preventDefault();
     $.post(
-        "/karyawan/add",
+        "/karyawan/tambah",
         {
-            nama: $('#nama').val(),
-            email: $('#email').val(),
-            username: $('#username').val(),
-            password: $('#password').val(),
-            alamat: $('#alamat').val(),
-            nohp: $('#nohp').val()
+            nama: $('#namaTambah').val(),
+            email: $('#emailTambah').val(),
+            username: $('#usernameTambah').val(),
+            password: $('#passwordTambah').val(),
+            alamat: $('#alamatTambah').val(),
+            nohp: $('#nohpTambah').val()
         },
         function (data) {
             $('.container').html(data);
         })
         .always(function () {
-            $('#modal-overlay').hide();
+            $('#tambah-modal-overlay').hide();
         })
         .fail(function (data) {
             console.log(data.responseJSON.errors);
@@ -75,7 +75,7 @@ $('#karyawan-form').submit(function (e) {
 function hapusKaryawan(id) {
     if (confirm('Yakin mau hapus data?')) {
         $.post(
-            "/karyawan/delete",
+            "/karyawan/hapus",
             {
                 id: id
             },
@@ -98,3 +98,50 @@ function hapusKaryawan(id) {
             })
     }
 }
+
+function editKaryawan(id){
+    $('#idEdit').val(id);
+    $('#namaEdit').val($(`#employee-name${id}`).html());
+    $('#emailEdit').val($(`#employee-email${id}`).html());
+    $('#usernameEdit').val($(`#employee-username${id}`).html());
+
+    // Password tidak ditampilkan karena berupa Hash
+    // $('#passwordEdit').val($(`#employee-password${id}`).val());
+    
+    $('#nohpEdit').val($(`#employee-phone${id}`).html());
+    $('#alamatEdit').val($(`#employee-address${id}`).val());
+    $('#edit-modal-overlay').show();
+}
+
+$('#edit-cancel-modal').click(function () {
+    $('#edit-modal-overlay').hide();
+})
+
+$('#edit-karyawan-form').submit(function (e) {
+    e.preventDefault();
+    $.post(
+        "/karyawan/edit",
+        {
+            id: $('#idEdit').val(),
+            nama: $('#namaEdit').val(),
+            email: $('#emailEdit').val(),
+            username: $('#usernameEdit').val(),
+            password: $('#passwordEdit').val(),
+            alamat: $('#alamatEdit').val(),
+            nohp: $('#nohpEdit').val()
+        },
+        function (data) {
+            $('.container').html(data);
+        })
+        .always(function () {
+            $('#edit-modal-overlay').hide();
+        })
+        .fail(function (data) {
+            console.log(data.responseJSON.errors);
+            let errorMsg = '';
+            $.each(data.responseJSON.errors, function (key, error) {
+                errorMsg += error + '\n';
+            })
+            alert(errorMsg);
+        })
+})

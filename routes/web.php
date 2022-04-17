@@ -24,9 +24,10 @@ Route::get('/login', [LoginController::class, 'index'])->name('login')->middlewa
 Route::post('/login', [LoginController::class, 'auth']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/karyawan', [KaryawanController::class, 'index'])->middleware('auth');
-Route::post('/karyawan/add', [KaryawanController::class, 'tambah'])->middleware('auth');
-Route::post('/karyawan/delete', [KaryawanController::class, 'hapus'])->middleware('auth');
+Route::get('/karyawan', [KaryawanController::class, 'lihat'])->middleware('auth');
+Route::post('/karyawan/tambah', [KaryawanController::class, 'tambah'])->middleware('auth');
+Route::post('/karyawan/hapus', [KaryawanController::class, 'hapus'])->middleware('auth');
+Route::post('/karyawan/edit', [KaryawanController::class, 'edit'])->middleware('auth');
 
 Route::get('/warung', [WarungController::class, 'index'])->middleware('auth');
 
