@@ -73,11 +73,11 @@
                     <div class="data">
                         <div class="total">
                             <p>Total</p>
-                            <h3>400 <span>pcs</span></h3>
+                            <h3>{{ $pencatatan_total->sum('produk_terbeli') }} <span>pcs</span></h3>
                         </div>
                         <div class="bulan-ini">
                             <p>Bulan ini</p>
-                            <h4>150 <span>pcs</span></h4>
+                            <h4>{{ $pencatatan_bulanini->sum('produk_terbeli') }} <span>pcs</span></h4>
                         </div>
                     </div>
                 </div>
@@ -90,31 +90,31 @@
                 <div class="data-keuangan pemasukan">
                     <div class="total">
                         <p>Total Pemasukan</p>
-                        <h3>Rp 2.400.000</h3>
+                        <h3>Rp {{ $pencatatan_total->sum('pemasukan') }}</h3>
                     </div>
                     <div class="bulan-ini">
                         <p>Bulan ini</p>
-                        <h4>Rp 400.000</h4>
+                        <h4>Rp {{ $pencatatan_bulanini->sum('pemasukan') }}</h4>
                     </div>
                 </div>
                 <div class="data-keuangan pengeluaran">
                     <div class="total">
                         <p>Total Pengeluaran</p>
-                        <h3>Rp 2.400.000</h3>
+                        <h3>Rp {{ $pencatatan_total->sum('pengeluaran') }}</h3>
                     </div>
                     <div class="bulan-ini">
                         <p>Bulan ini</p>
-                        <h4>Rp 400.000</h4>
+                        <h4>Rp {{ $pencatatan_bulanini->sum('pengeluaran') }}</h4>
                     </div>
                 </div>
                 <div class="data-keuangan laba">
                     <div class="total">
                         <p>Total Laba</p>
-                        <h3>Rp 2.400.000</h3>
+                        <h3>Rp {{ $pencatatan_total->sum('pemasukan')-$pencatatan_total->sum('pengeluaran') }}</h3>
                     </div>
                     <div class="bulan-ini">
                         <p>Bulan ini</p>
-                        <h4>Rp 400.000</h4>
+                        <h4>Rp {{ $pencatatan_bulanini->sum('pemasukan')-$pencatatan_bulanini->sum('pengeluaran') }}</h4>
                     </div>
                 </div>
             </div>
