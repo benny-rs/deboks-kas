@@ -5,14 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class C_Login extends Controller
+class C_Auth extends Controller
 {
     //
     public function index(){
         return view('v_login');
     }
 
-    public function auth(Request $request){
+    public function login(Request $request){
         $credentials = $request->validate([
             'username' => 'required',
             'password' => 'required'

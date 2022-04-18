@@ -16,4 +16,8 @@ class C_Home extends Controller
             "pencatatan_bulanini" => $pencatatan_bulanini
         ]);
     }
+
+    public function chart(){
+        return Pencatatan::pluck('produk_terbeli')->toArray();
+    }
 }

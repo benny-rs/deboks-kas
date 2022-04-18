@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\C_Warung;
 use App\Http\Controllers\C_Pencatatan;
 use App\Http\Controllers\C_Karyawan;
-use App\Http\Controllers\C_Login;
+use App\Http\Controllers\C_Auth;
 use App\Http\Controllers\C_Home;
 
 /*
@@ -19,10 +19,11 @@ use App\Http\Controllers\C_Home;
 */
 
 Route::get('/', [C_Home::class, 'index'])->middleware('auth');
+Route::get('/chart', [C_Home::class, 'chart'])->middleware('auth');
 
-Route::get('/login', [C_Login::class, 'index'])->name('login')->middleware('guest');
-Route::post('/login', [C_Login::class, 'auth']);
-Route::post('/logout', [C_Login::class, 'logout']);
+Route::get('/login', [C_Auth::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [C_Auth::class, 'login']);
+Route::post('/logout', [C_Auth::class, 'logout']);
 
 Route::get('/karyawan', [C_Karyawan::class, 'lihat'])->middleware('auth');
 Route::post('/karyawan/tambah', [C_Karyawan::class, 'tambah'])->middleware('auth');
