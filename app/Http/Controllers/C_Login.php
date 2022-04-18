@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class LoginController extends Controller
+class C_Login extends Controller
 {
     //
     public function index(){
-        return view('login');
+        return view('v_login');
     }
 
     public function auth(Request $request){

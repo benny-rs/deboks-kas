@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\WarungController;
-use App\Http\Controllers\PencatatanController;
-use App\Http\Controllers\KaryawanController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\C_Warung;
+use App\Http\Controllers\C_Pencatatan;
+use App\Http\Controllers\C_Karyawan;
+use App\Http\Controllers\C_Login;
+use App\Http\Controllers\C_Home;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,20 +18,20 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->middleware('auth');
+Route::get('/', [C_Home::class, 'index'])->middleware('auth');
 
-Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
-Route::post('/login', [LoginController::class, 'auth']);
-Route::post('/logout', [LoginController::class, 'logout']);
+Route::get('/login', [C_Login::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [C_Login::class, 'auth']);
+Route::post('/logout', [C_Login::class, 'logout']);
 
-Route::get('/karyawan', [KaryawanController::class, 'lihat'])->middleware('auth');
-Route::post('/karyawan/tambah', [KaryawanController::class, 'tambah'])->middleware('auth');
-Route::post('/karyawan/hapus', [KaryawanController::class, 'hapus'])->middleware('auth');
-Route::post('/karyawan/edit', [KaryawanController::class, 'edit'])->middleware('auth');
+Route::get('/karyawan', [C_Karyawan::class, 'lihat'])->middleware('auth');
+Route::post('/karyawan/tambah', [C_Karyawan::class, 'tambah'])->middleware('auth');
+Route::post('/karyawan/hapus', [C_Karyawan::class, 'hapus'])->middleware('auth');
+Route::post('/karyawan/edit', [C_Karyawan::class, 'edit'])->middleware('auth');
 
-Route::get('/warung', [WarungController::class, 'index'])->middleware('auth');
+Route::get('/warung', [C_Warung::class, 'index'])->middleware('auth');
 
-Route::get('/pencatatan/{id_warung}/{tahun}/{bulan}', [PencatatanController::class, 'index'])->middleware('auth');
+Route::get('/pencatatan/{id_warung}/{tahun}/{bulan}', [C_Pencatatan::class, 'index'])->middleware('auth');
 
 Route::get('/dp', function(){
     return view('datepicker');

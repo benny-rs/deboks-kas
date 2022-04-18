@@ -6,7 +6,7 @@ use App\Models\Warung;
 use App\Models\Pencatatan;
 use Illuminate\Http\Request;
 
-class PencatatanController extends Controller
+class C_Pencatatan extends Controller
 {
     //
     // public function index(Warung $warung){
@@ -16,7 +16,7 @@ class PencatatanController extends Controller
     //     ]);
     // }
     public function index($id_warung, $tahun, $bulan){
-        return view('pencatatan', [
+        return view('v_pencatatan', [
             "warung" => Warung::find($id_warung),
             "data" => Pencatatan::where('id_warung',$id_warung)->whereMonth('created_at', $bulan)->whereYear('created_at',$tahun)->get()
         ]);

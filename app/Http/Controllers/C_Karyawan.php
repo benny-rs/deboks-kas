@@ -6,11 +6,11 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-class KaryawanController extends Controller
+class C_Karyawan extends Controller
 {
     //
     public function lihat(){
-        return view('data_karyawan', [
+        return view('v_data_karyawan', [
             "data" => User::where('is_admin',false)->get()
         ]);
     }
@@ -29,7 +29,7 @@ class KaryawanController extends Controller
         $validatedData['password'] = Hash::make($validatedData['password']);
         User::create($validatedData);
         
-        return view('update_karyawan', [
+        return view('v_update_karyawan', [
             "data" => User::where('is_admin',false)->get()
         ]);
     }
@@ -38,7 +38,7 @@ class KaryawanController extends Controller
         User::destroy($request->id);
 
         // return 'masuk hapus';
-        return view('update_karyawan', [
+        return view('v_update_karyawan', [
             "data" => User::where('is_admin',false)->get()
         ]);
     }
@@ -57,7 +57,7 @@ class KaryawanController extends Controller
         $validatedData['password'] = Hash::make($validatedData['password']);
         User::where('id', $request->id)->update($validatedData);
         
-        return view('update_karyawan', [
+        return view('v_update_karyawan', [
             "data" => User::where('is_admin',false)->get()
         ]);
     }
