@@ -16,7 +16,7 @@ $(document).ready(async function () {
             const myChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni'],
+                    labels: ['Minggu 1', 'Minggu 2', 'Minggu 3', 'Minggu 4'],
                     datasets: [{
                         label: 'pcs',
                         // data: [35, 37, 45, 30, 50, 45],
