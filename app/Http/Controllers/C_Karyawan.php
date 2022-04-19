@@ -16,16 +16,23 @@ class C_Karyawan extends Controller
     }
 
     public function tambah(Request $request){
+        // return $request->file('foto_profil')->store('images/user-profile');
+        // return $request->file('foto_profil');
         $validatedData = $request->validate([
             'nama' => 'required',
             'email' => 'required|email:dns|unique:users',
             'username' => 'required|unique:users',
             'password' => 'required|min:3',
             'nohp' => 'nullable',
-            'alamat' => 'nullable'
+            'alamat' => 'nullable',
+            'foto_profil' => 'nullable|image|file|max:2048'
         ]);
         // return $request->all();
         // return $validatedData;
+        if($request->file('foto_profil')){
+            $validatedData['foto_profil'] = $request->file('foto_profil')->store('images/user-profile');
+        }
+
         $validatedData['password'] = Hash::make($validatedData['password']);
         User::create($validatedData);
         
@@ -50,11 +57,19 @@ class C_Karyawan extends Controller
             'username' => 'required',
             'password' => 'required|min:3',
             'nohp' => 'nullable',
-            'alamat' => 'nullable'
+            'alamat' => 'nullable',
+            'foto_profil' => 'nullable|image|file|max:2048'
         ]);
+        if($request->file('foto_profil')){
+            $validatedData['foto_profil'] = $request->file('foto_profil')->store('images/user-profile');
+        }
         // return $request->all();
         // return $validatedData;
-        $validatedData['password'] = Hash::make($validatedData['password']);
+        if($request->password){
+            $validatedData['password'] = Hash::make($validatedData['password']);
+        }else{
+            $validatedData['password'] = User::find($request->id)->password;
+        };
         User::where('id', $request->id)->update($validatedData);
         
         return view('v_update_karyawan', [

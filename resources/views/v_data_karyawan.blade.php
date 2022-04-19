@@ -38,7 +38,11 @@
     <div class="container">
         @foreach($data as $user)
             <div class="card">
-                <div class="employee-photo" style="background-image: url({{ $user->foto_profil }});"></div>
+                @if($user->foto_profil)
+                    <div class="employee-photo" style="background-image: url({{ asset('storage/'.$user->foto_profil) }});"></div>
+                @else
+                    <div class="employee-photo" style="background-image: url({{ asset('storage/images/user-profile/default_profile.png') }});"></div>
+                @endif                
                 <h3 class="employee-name" id="employee-name{{ $user->id }}">{{ $user->nama }}</h3>
                 <p class="employee-email" id="employee-email{{ $user->id }}">{{ $user->email }}</p>
                 <p class="employee-username" id="employee-username{{ $user->id }}">{{ $user->username }}</p>
@@ -64,14 +68,14 @@
                 <h3>Data Karyawan</h3>
             </div>
             <div class="modal-content">
-                <input type="text" class="nama" placeholder="Nama" id="namaTambah">
-                <input type="email" class="email" placeholder="Email" id="emailTambah">
-                <input type="text" class="username" placeholder="Username" id="usernameTambah">
-                <input type="password" class="password" placeholder="Password" id="passwordTambah">
-                <input type="text" class="alamat" placeholder="Alamat" id="alamatTambah">
-                <input type="text" class="nohp" placeholder="No. HP" id="nohpTambah">
-                <label for="employee-file-photo">Profile Photo</label>
-                <input type="file" name="foto_profil" id="employee-file-photo">
+                <input type="text" class="nama" placeholder="Nama" id="namaTambah" name="nama">
+                <input type="email" class="email" placeholder="Email" id="emailTambah" name="email">
+                <input type="text" class="username" placeholder="Username" id="usernameTambah" name="username">
+                <input type="password" class="password" placeholder="Password" id="passwordTambah" name="password">
+                <input type="text" class="alamat" placeholder="Alamat" id="alamatTambah" name="alamat">
+                <input type="text" class="nohp" placeholder="No. HP" id="nohpTambah" name="nohp">
+                <label for="foto_profilTambah">Profile Photo</label>
+                <input type="file" name="foto_profil" id="foto_profilTambah">
             </div>
             <div class="modal-footer">
                 <button id="tambah-cancel-modal" type="button">Cancel</button>
@@ -88,15 +92,15 @@
                 <h3>Data Karyawan</h3>
             </div>
             <div class="modal-content">
-                <input type="hidden" id="idEdit">
-                <input type="text" class="nama" placeholder="Nama" id="namaEdit">
-                <input type="email" class="email" placeholder="Email" id="emailEdit">
-                <input type="text" class="username" placeholder="Username" id="usernameEdit">
-                <input type="password" class="password" placeholder="Password" id="passwordEdit">
-                <input type="text" class="alamat" placeholder="Alamat" id="alamatEdit">
-                <input type="text" class="nohp" placeholder="No. HP" id="nohpEdit">
-                <label for="employee-file-photo">Profile Photo</label>
-                <input type="file" name="foto_profil" id="employee-file-photo">
+                <input type="hidden" id="idEdit" name="id">
+                <input type="text" class="nama" placeholder="Nama" id="namaEdit" name="nama">
+                <input type="email" class="email" placeholder="Email" id="emailEdit" name="email">
+                <input type="text" class="username" placeholder="Username" id="usernameEdit" name="username">
+                <input type="text" class="password" placeholder="Password" id="passwordEdit" name="password">
+                <input type="text" class="alamat" placeholder="Alamat" id="alamatEdit" name="alamat">
+                <input type="text" class="nohp" placeholder="No. HP" id="nohpEdit" name="nohp">
+                <label for="foto_profilEdit">Profile Photo</label>
+                <input type="file" name="foto_profil" id="foto_profilEdit">
             </div>
             <div class="modal-footer">
                 <button id="edit-cancel-modal" type="button">Cancel</button>

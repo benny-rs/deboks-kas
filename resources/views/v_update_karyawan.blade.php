@@ -1,6 +1,10 @@
 @foreach($data as $user)
     <div class="card">
-        <div class="employee-photo" style="background-image: url({{ $user->foto_profil }});"></div>
+        @if($user->foto_profil)
+            <div class="employee-photo" style="background-image: url({{ asset('storage/'.$user->foto_profil) }});"></div>
+        @else
+            <div class="employee-photo" style="background-image: url({{ asset('storage/images/user-profile/default_profile.png') }});"></div>
+        @endif                
         <h3 class="employee-name" id="employee-name{{ $user->id }}">{{ $user->nama }}</h3>
         <p class="employee-email" id="employee-email{{ $user->id }}">{{ $user->email }}</p>
         <p class="employee-username" id="employee-username{{ $user->id }}">{{ $user->username }}</p>
