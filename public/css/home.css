@@ -196,7 +196,8 @@ aside a{
     margin: 10px;   
 }
 
-.card button{
+.card a.btn-warung{
+    text-decoration: none;
     color: white;
     border: none;
     background-color: var(--color-edit);

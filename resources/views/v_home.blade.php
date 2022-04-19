@@ -62,10 +62,10 @@
                 <div class="warung">
                     <h3>Warung terlaris</h3>
                     <div class="card">
-                        <h3>Warung Aminah</h3>
-                        <p>081234567890</p>
-                        <p>Jalan Raden Patah no 10 Kediri</p>
-                        <button>PENCATATAN</button>
+                        <h3>{{ $warung->nama }}</h3>
+                        <p>{{ $warung->nohp }}</p>
+                        <p>{{ $warung->alamat }}</p>
+                        <a class="btn-warung" href="/pencatatan/{{ $warung->id }}/{{ idate('Y') }}/{{ idate('m') }}">PENCATATAN</a>
                     </div>
                 </div>
                 <div class="produk">
