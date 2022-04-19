@@ -47,6 +47,7 @@ nav{
     flex: 1;
     justify-content: end;
     align-items: center;
+    position: relative;
 }
 
 .profile-photo{
@@ -55,7 +56,9 @@ nav{
     border-radius: 100%;
     background-color: var(--color2);
     margin-left: 30px;
-    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
 }
 
 #account-dropdown{

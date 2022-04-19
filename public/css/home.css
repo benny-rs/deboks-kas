@@ -63,6 +63,9 @@ nav{
     border-radius: 100%;
     background-color: var(--color2);
     margin-left: 30px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
 }
 
 #account-dropdown{
