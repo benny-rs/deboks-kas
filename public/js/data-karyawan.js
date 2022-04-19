@@ -111,6 +111,7 @@ function editKaryawan(id) {
 
     $('#nohpEdit').val($(`#employee-phone${id}`).html());
     $('#alamatEdit').val($(`#employee-address${id}`).val());
+    $('#foto_profilLamaEdit').val($(`#employee-old-photo${id}`).val());
     $('#edit-modal-overlay').show();
 }
 

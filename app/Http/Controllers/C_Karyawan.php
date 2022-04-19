@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class C_Karyawan extends Controller
 {
@@ -55,12 +56,15 @@ class C_Karyawan extends Controller
             'nama' => 'required',
             'email' => 'required|email:dns',
             'username' => 'required',
-            'password' => 'required|min:3',
+            // 'password' => 'required|min:3',
             'nohp' => 'nullable',
             'alamat' => 'nullable',
             'foto_profil' => 'nullable|image|file|max:2048'
         ]);
         if($request->file('foto_profil')){
+            if($request->foto_profil_lama){
+                Storage::delete($request->foto_profil_lama);
+            }
             $validatedData['foto_profil'] = $request->file('foto_profil')->store('images/user-profile');
         }
         // return $request->all();

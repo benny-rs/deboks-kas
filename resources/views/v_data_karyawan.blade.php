@@ -42,7 +42,8 @@
                     <div class="employee-photo" style="background-image: url({{ asset('storage/'.$user->foto_profil) }});"></div>
                 @else
                     <div class="employee-photo" style="background-image: url({{ asset('storage/images/user-profile/default_profile.png') }});"></div>
-                @endif                
+                @endif
+                <input type="hidden" id="employee-old-photo{{ $user->id }}" value="{{ $user->foto_profil }}">
                 <h3 class="employee-name" id="employee-name{{ $user->id }}">{{ $user->nama }}</h3>
                 <p class="employee-email" id="employee-email{{ $user->id }}">{{ $user->email }}</p>
                 <p class="employee-username" id="employee-username{{ $user->id }}">{{ $user->username }}</p>
@@ -101,6 +102,7 @@
                 <input type="text" class="nohp" placeholder="No. HP" id="nohpEdit" name="nohp">
                 <label for="foto_profilEdit">Profile Photo</label>
                 <input type="file" name="foto_profil" id="foto_profilEdit">
+                <input type="hidden" name="foto_profil_lama" id="foto_profilLamaEdit">
             </div>
             <div class="modal-footer">
                 <button id="edit-cancel-modal" type="button">Cancel</button>
