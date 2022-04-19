@@ -22,7 +22,14 @@
             <h2>Bulan Januari - 2022</h2>
         </div>
         <div class="account">
-            <p>{{ auth()->user()->nama }}</p>
+            <div class="account-name-role">
+                <h3 style="margin: 0">{{ auth()->user()->nama }}</h3>
+                @if(auth()->user()->is_admin)
+                    <p style="margin: 0">Admin</p>
+                @else
+                    <p style="margin: 0">Karyawan</p>
+                @endif
+            </div>
             @if(auth()->user()->foto_profil)
                 <div class="profile-photo" style="background-image: url({{ asset('storage/'.auth()->user()->foto_profil) }});"></div>
             @else

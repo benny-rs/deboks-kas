@@ -17,7 +17,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script>
-    <link rel="stylesheet" href="/css/pencatatan2.css">
+    <link rel="stylesheet" href="/css/pencatatan.css">
 </head>
 
 <body>
@@ -38,7 +38,14 @@
             http://jsfiddle.net/DBpJe/5106 -->
         </div>
         <div class="account">
-            <p>{{ auth()->user()->nama }}</p>
+            <div class="account-name-role">
+                <h3 style="margin: 0;font-size:1.17em">{{ auth()->user()->nama }}</h3>
+                @if(auth()->user()->is_admin)
+                    <p style="margin: 0">Admin</p>
+                @else
+                    <p style="margin: 0">Karyawan</p>
+                @endif
+            </div>
             @if(auth()->user()->foto_profil)
                 <div class="profile-photo" style="background-image: url({{ asset('storage/'.auth()->user()->foto_profil) }});"></div>
             @else

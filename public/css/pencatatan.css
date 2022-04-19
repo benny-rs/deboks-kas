@@ -4,14 +4,18 @@
     --color-edit: #0094FF;
     --color-red: #FF0000;
     --border-radius: 20px;
-    --box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
-    font-family: 'Inter', sans-serif;
+    --box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;    
 }
 
 body{
     margin: 0;
     padding: 0;
     background-color: var(--color2);
+
+    /* replacing bootstrap style */
+    font-family: 'Inter', sans-serif;
+    font-size: unset;
+    color: black;
 }
 
 nav{
@@ -99,7 +103,7 @@ td{
     text-align: center;
 }
 
-.date-picker{
+#datepicker{
     border: none;
     font-size: 24px;
     font-weight: 700;
@@ -108,11 +112,20 @@ td{
     text-align: center;
 }
 
-/* .table-condensed thead tr:nth-child(2),
-.table-condensed tbody {
-  display: none
-} */
+/* replacing bootstrap style */
+p{
+    margin: 0;
+}
 
-.ui-datepicker-calendar {
-    display: none;
+h2{
+    font-size: 24px;
+    margin: 19.92px 0;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    line-height: normal!important;
+}
+
+form{
+    margin: 0;
 }
