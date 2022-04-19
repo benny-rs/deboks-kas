@@ -43,6 +43,9 @@ class C_Karyawan extends Controller
     }
 
     public function hapus(Request $request){
+        if(User::find($request->id)->foto_profil){
+            Storage::delete(User::find($request->id)->foto_profil);
+        }
         User::destroy($request->id);
 
         // return 'masuk hapus';

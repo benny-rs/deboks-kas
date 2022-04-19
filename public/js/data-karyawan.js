@@ -87,7 +87,7 @@ function hapusKaryawan(id) {
             })
             .always(function (data) {
                 // $('#modal-overlay').hide();
-                console.log(data)
+                console.log("Data sukses dihapus")
             })
             .fail(function (data) {
                 console.log(data.responseJSON.errors);
