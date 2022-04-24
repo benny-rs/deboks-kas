@@ -1,64 +1,176 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
-
+<br />
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
 </p>
 
-## About Laravel
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://unej.ac.id">
+    <img src="http://protan.faperta.unej.ac.id/wp-content/uploads/sites/14/2020/05/logo-unej-300x296.png" alt="Logo" width="300">
+  </a>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+  <h3 align="center">DeboksKas</h3>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+  <p align="center">
+    Sistem Informasi Pencatatan Keuangan untuk Meningkatkan Performa Penjualan Keripik Pelepah Pisang di Kabupaten Jombang
+    <br />
+    <br />
+    <a href="https://deboks-kas.000webhostapp.com/">View Demo</a>
+    ·
+    <a href="https://github.com/benny-rs/deboks-kas/issues">Report Bug or Request Feature</a>
+  </p>
+</div>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#author">Author</a></li>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <!--<li><a href="#acknowledgments">Acknowledgments</a></li>-->
+  </ol>
+</details>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<!-- Author -->
+## Author
+Here we are :
 
-## Laravel Sponsors
+* Nafis Arinda Rizky Putra Handoko (202410102065) - Project Manager
+* Laila Nur Fardah (202410102018) - System Analyst
+* Nico Wibiyanto (202410102081) - System Designer
+* Benny Ridwan Susanto (202410102015) - Software Developer
+* Laili Alfizah (202410102086) - Software Tester
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
+DeboksKas adalah suatu aplikasi yang bisa digunakan untuk melakukan pencatatan keuangan, karyawan, warung, maupun produk yang dijual oleh mitra(Bu Rina) selaku penjual keripik pelepah pisang di Kabupaten Jombang. Selain melakukan pencatatan, mitra juga bisa melihat performa keuangan setiap minggu atau setiap bulan dan melihat warung mana yang menjual produk paling laris.
+
+<!-- [![Product Name Screen Shot][product-screenshot]](https://github.com/NafisHandoko/depr-calc) -->
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+### Built With
+
+Here's a list of the technologies we used to build this project
+
+* [Laravel](https://laravel.com/)
+* [jQuery](https://jquery.com/)
+* [Bootstrap Datepicker](https://bootstrap-datepicker.readthedocs.io/en/latest/)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+
+<!-- USAGE EXAMPLES -->
+## Installation
+
+### Requirements
+* [git](https://git-scm.com/)
+* [XAMPP](https://www.apachefriends.org/download.html)
+* [Composer](https://getcomposer.org/)
+
+### Langkah Instalasi
+* Buka terminal/cmd
+* Ketik perintah dibawah ini secara berturut-turut di cmd : 
+```
+git clone https://github.com/benny-rs/deboks-kas.git
+cd deboks-kas
+composer install
+copy .env.example .env
+```
+* Buka file .env dan isikan `deboks_kas` pada `DB_DATABASE`
+* Isi `DB_USERNAME` dan `DB_PASSWORD` sesuai konfigurasi XAMPP kalian, secara default `DB_USERNAME=root` dan `DB_PASSWORD` kosong
+* Nyalakan Apache dan MySQL di XAMPP
+* Buka browser dan ketikkan `http://localhost/phpmyadmin/` di address bar
+* Buat database dengan nama `deboks_kas`
+* Buka tab import lalu import file [deboks_kas.sql](https://github.com/benny-rs/deboks-kas/blob/main/deboks_kas.sql)
+* Kembali ke cmd/terminal lalu ketikkan `php artisan key:generate`
+* Terakhir ketik `php artisan serve` lalu buka browser
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- CONTRIBUTING -->
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-## Code of Conduct
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## Security Vulnerabilities
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
+
+<!-- LICENSE -->
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Distributed under the MIT License. See <a href="https://github.com/benny-rs/deboks-kas/blob/master/LICENSE">`LICENSE`</a> for more information.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+
+<!-- ACKNOWLEDGMENTS -->
+<!--
+## Acknowledgments
+
+Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
+
+* [Choose an Open Source License](https://choosealicense.com)
+* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
+* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
+* [Malven's Grid Cheatsheet](https://grid.malven.co/)
+* [Img Shields](https://shields.io)
+* [GitHub Pages](https://pages.github.com)
+* [Font Awesome](https://fontawesome.com)
+* [React Icons](https://react-icons.github.io/react-icons/search)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+-->
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/NafisHandoko/depr-calc.svg?style=for-the-badge
+[contributors-url]: https://github.com/benny-rs/deboks-kas/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/NafisHandoko/depr-calc.svg?style=for-the-badge
+[forks-url]: https://github.com/benny-rs/deboks-kas/network/members
+[stars-shield]: https://img.shields.io/github/stars/NafisHandoko/depr-calc.svg?style=for-the-badge
+[stars-url]: https://github.com/benny-rs/deboks-kas/stargazers
+[issues-shield]: https://img.shields.io/github/issues/NafisHandoko/depr-calc.svg?style=for-the-badge
+[issues-url]: https://github.com/benny-rs/deboks-kas/issues
+[license-shield]: https://img.shields.io/github/license/NafisHandoko/depr-calc.svg?style=for-the-badge
+[license-url]: https://github.com/benny-rs/deboks-kas/blob/master/LICENSE
+[product-screenshot]: screenshot.png
