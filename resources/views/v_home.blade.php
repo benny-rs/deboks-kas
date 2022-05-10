@@ -51,7 +51,11 @@
     </nav>
     <div class="container">
         <aside class="nav">
-            <a href="/karyawan">Data Karyawan</a>
+            @if(auth()->user()->is_admin)
+                <a href="/karyawan">Data Karyawan</a>
+            @else
+                <a href="/produk">Data Produk</a>
+            @endif
             <a href="/warung">Data Warung</a>
         </aside>
         <div class="main-data">

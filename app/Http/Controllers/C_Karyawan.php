@@ -10,8 +10,8 @@ use Illuminate\Support\Facades\Storage;
 class C_Karyawan extends Controller
 {
     //
-    public function lihat(){
-        return view('v_data_karyawan', [
+    public function index(){
+        return view('v_karyawan', [
             "data" => User::where('is_admin',false)->get()
         ]);
     }
@@ -23,7 +23,7 @@ class C_Karyawan extends Controller
             'nama' => 'required',
             'email' => 'required|email:dns|unique:users',
             'username' => 'required|unique:users',
-            'password' => 'required|min:3',
+            'password' => 'required|min:5',
             'nohp' => 'nullable',
             'alamat' => 'nullable',
             'foto_profil' => 'nullable|image|file|max:2048'
@@ -59,7 +59,7 @@ class C_Karyawan extends Controller
             'nama' => 'required',
             'email' => 'required|email:dns',
             'username' => 'required',
-            // 'password' => 'required|min:3',
+            'password' => 'nullable|min:5',
             'nohp' => 'nullable',
             'alamat' => 'nullable',
             'foto_profil' => 'nullable|image|file|max:2048'

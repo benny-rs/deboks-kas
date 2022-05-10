@@ -9,7 +9,7 @@ class C_Warung extends Controller
 {
     //
     public function index(){
-        return view('v_data_warung', [
+        return view('v_warung', [
             "data" => Warung::all()
         ]);
     }
