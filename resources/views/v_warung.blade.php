@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>Data Warung</title>
     <link rel="stylesheet" href="/css/data_warung.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,9 +47,9 @@
     <div class="container">
         @foreach($data as $warung)
             <div class="card">
-                <h3>{{ $warung['nama'] }}</h3>
-                <p>{{ $warung['nohp'] }}</p>
-                <p>{{ $warung['alamat'] }}</p>
+                <h3 class="warung-name" id="warung-name{{ $warung->id }}">{{ $warung['nama'] }}</h3>
+                <p class="warung-phone" id="warung-phone{{ $warung->id }}">{{ $warung['nohp'] }}</p>
+                <p id="warung-address{{ $warung->id }}">{{ $warung['alamat'] }}</p>
                 <div class="action">
                     <button type="button" class="edit" onclick="editWarung({{ $warung->id }})">EDIT</button>
                     <button type="button" class="hapus" onclick="hapusWarung({{ $warung->id }})" >DELETE</button>

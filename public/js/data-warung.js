@@ -75,16 +75,9 @@ function hapusWarung(id) {
 
 function editWarung(id) {
     $('#idEdit').val(id);
-    $('#namaEdit').val($(`#employee-name${id}`).html());
-    $('#emailEdit').val($(`#employee-email${id}`).html());
-    $('#usernameEdit').val($(`#employee-username${id}`).html());
-
-    // Password tidak ditampilkan karena berupa Hash
-    // $('#passwordEdit').val($(`#employee-password${id}`).val());
-
-    $('#nohpEdit').val($(`#employee-phone${id}`).html());
-    $('#alamatEdit').val($(`#employee-address${id}`).val());
-    $('#foto_profilLamaEdit').val($(`#employee-old-photo${id}`).val());
+    $('#namaEdit').val($(`#warung-name${id}`).html());
+    $('#nohpEdit').val($(`#warung-phone${id}`).html());
+    $('#alamatEdit').val($(`#warung-address${id}`).html());
     $('#edit-modal-overlay').show();
 }
 
