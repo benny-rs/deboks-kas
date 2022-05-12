@@ -15,9 +15,7 @@
         <div class="desc"><h1>DeboksKas</h1></div>
         <div class="login-box">
             <h2>LOGIN</h2>
-            @if(session()->has('loginError'))
-                <p style="color:red;margin-bottom: 5px">{{ session('loginError') }}</p>
-            @endif
+            <!-- <p style="color:red;margin-bottom: 5px">{{ session('loginError') }}</p> -->
             <form action="/login" method="post">
                 @csrf
                 <input type="text" name="username" id="username" placeholder="Username">
@@ -26,5 +24,12 @@
             </form>
         </div>
     </div>
+    @if(session()->has('loginError'))
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+                alert("{{ session('loginError') }}")
+            });
+        </script>
+    @endif
 </body>
 </html>
