@@ -37,6 +37,9 @@ Route::post('/warung/hapus', [C_Warung::class, 'hapus'])->middleware('auth');
 Route::post('/warung/edit', [C_Warung::class, 'edit'])->middleware('auth');
 
 Route::get('/pencatatan/{id_warung}/{tahun}/{bulan}', [C_Pencatatan::class, 'index'])->middleware('auth');
+Route::post('/pencatatan/{id_warung}/{tahun}/{bulan}/tambah', [C_Pencatatan::class, 'tambah'])->middleware('auth');
+Route::post('/pencatatan/{id_warung}/{tahun}/{bulan}/edit', [C_Pencatatan::class, 'edit'])->middleware('auth');
+Route::post('/pencatatan/{id_warung}/{tahun}/{bulan}/hapus', [C_Pencatatan::class, 'hapus'])->middleware('auth');
 
 Route::get('/produk', [C_Produk::class, 'index'])->middleware('auth');
 

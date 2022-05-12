@@ -129,3 +129,133 @@ h1,h2,h3,h4,h5,h6,p{
 form{
     margin: 0;
 }
+
+#tambah-pencatatan{
+    background-color: var(--color1);
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    color: white;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit{
+    background-color: var(--color-edit);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin-right: 7px;
+}
+
+.hapus{
+    background-color: var(--color-red);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+}
+
+#tambah-modal-overlay, #edit-modal-overlay{
+    background-color: rgba(0,0,0,.4);
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    display: none;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+.modal-box{
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    max-width: 480px;
+    animation-name: modal-animate;
+    animation-duration: 0.7s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* align-items: start; */
+    border-radius: var(--border-radius);
+}
+
+.modal-content{
+    display: flex;
+    flex-direction: column;
+    max-height: 200px;
+    overflow-y: scroll;
+    padding-right: 10px;
+}
+
+@keyframes modal-animate {
+    from{scale: 0.2}
+    to{scale: 1}
+}
+
+input[type="text"],input[type="email"],input[type="password"]{
+    padding: 15px;
+    border-radius: var(--border-radius);
+    border: var(--color1) 1px solid;
+    /* font-family: 'Montserrat', sans-serif; */
+    font-size: 14px;
+    /* margin-top: 10px; */
+    margin-bottom: 15px;
+    /* width: 420px; */
+    width: auto;
+}
+
+input[type="file"]{
+    padding-top: 0;
+    padding: 10px 0 30px 0;
+}
+
+.modal-footer{
+    /* background-color: aqua; */
+    padding-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+#tambah-cancel-modal, #edit-cancel-modal{
+    border: 2px var(--color1) solid;
+    padding: 10px 20px;
+    background-color: transparent;
+    border-radius: var(--border-radius);
+    margin-right: 5px;
+}
+
+#submit-modal{
+    border: none;
+    padding: 10px 20px;
+    background-color: var(--color1);
+    border-radius: var(--border-radius);
+    color: white;
+}
