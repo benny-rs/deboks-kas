@@ -64,7 +64,7 @@
     <div class="container">
         <table>
             <tr>
-                <th>Minggu</th>
+                <th>Weeks</th>
                 <th>Jumlah Produk Terbeli</th>
                 <th>Pemasukan</th>
                 <th>Pengeluaran</th>
