@@ -75,9 +75,9 @@ function hapusProduk(id) {
 
 function editProduk(id) {
     $('#idEdit').val(id);
-    $('#namaEdit').val($(`#warung-name${id}`).html());
-    $('#nohpEdit').val($(`#warung-phone${id}`).html());
-    $('#alamatEdit').val($(`#warung-address${id}`).html());
+    $('#namaEdit').val($(`#produk-nama${id}`).html());
+    $('#hargaEdit').val($(`#produk-harga${id}`).html());
+    $('#kuantitasEdit').val($(`#produk-kuantitas${id}`).html());
     $('#edit-modal-overlay').show();
 }
 

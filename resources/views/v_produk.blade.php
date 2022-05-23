@@ -50,11 +50,11 @@
             <div class="card">
                 <div class="produk-img" style="background-image: url(https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070);"></div>
                 <div class="produk-content">
-                    <h3>{{ $produk['nama'] }}</h3>
+                    <h3 id="produk-nama{{ $produk->id }}">{{ $produk['nama'] }}</h3>
                     <div class="produk-detail-action">
                         <div class="produk-detail">
-                            <p>Rp {{ $produk['harga'] }}/pcs</p>
-                            <p>Tersedia : {{ $produk['kuantitas'] }}pcs</p>
+                            <p id="produk-harga{{ $produk->id }}">Rp {{ $produk['harga'] }}/pcs</p>
+                            <p id="produk-kuantitas{{ $produk->id }}">Tersedia : {{ $produk['kuantitas'] }}pcs</p>
                         </div>
                         <div class="action">
                             <button type="button" class="edit" onclick="editProduk()"><span class="material-symbols-rounded">edit</span></button>
@@ -76,12 +76,12 @@
         <form class="modal-box" id="tambah-produk-form" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="modal-head">
-                <h3>Data Warung</h3>
+                <h3>Data Produk</h3>
             </div>
             <div class="modal-content">
-                <input type="text" class="nama" placeholder="Nama Warung" id="namaTambah" name="nama">
-                <input type="text" class="alamat" placeholder="Alamat" id="alamatTambah" name="alamat">
-                <input type="text" class="nohp" placeholder="No. HP" id="nohpTambah" name="nohp">
+                <input type="text" class="nama" placeholder="Nama Produk" id="namaTambah" name="nama">
+                <input type="text" class="harga" placeholder="Harga" id="hargaTambah" name="harga">
+                <input type="text" class="kuantitas" placeholder="Kuantitas" id="kuantitasTambah" name="kuantitas">
             </div>
             <div class="modal-footer">
                 <button id="tambah-cancel-modal" type="button">Cancel</button>
@@ -95,13 +95,13 @@
         <form class="modal-box" id="edit-produk-form" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="modal-head">
-                <h3>Data Warung</h3>
+                <h3>Data Produk</h3>
             </div>
             <div class="modal-content">
                 <input type="hidden" id="idEdit" name="id">
-                <input type="text" class="nama" placeholder="Nama Warung" id="namaEdit" name="nama">
-                <input type="text" class="alamat" placeholder="Alamat" id="alamatEdit" name="alamat">
-                <input type="text" class="nohp" placeholder="No. HP" id="nohpEdit" name="nohp">
+                <input type="text" class="nama" placeholder="Nama Produk" id="namaEdit" name="nama">
+                <input type="text" class="harga" placeholder="Harga" id="hargaEdit" name="harga">
+                <input type="text" class="kuantitas" placeholder="Kuantitas" id="kuantitasEdit" name="kuantitas">
             </div>
             <div class="modal-footer">
                 <button id="edit-cancel-modal" type="button">Cancel</button>
