@@ -49,8 +49,7 @@
         <div class="card">
             <div class="produk-img" style="background-image: url(https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070);"></div>
             <div class="produk-content">
-                <h3>Keripik Pelepah Pisang</h3>
-                <h3>Rasa Balado</h3>
+                <h3>Keripik Pelepah Pisang Rasa Balado</h3>
                 <div class="produk-detail-action">
                     <div class="produk-detail">
                         <p>Rp 5000/pcs</p>
