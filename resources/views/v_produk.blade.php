@@ -65,6 +65,51 @@
             </div>
         @endforeach
     </div>
+
+    @if(!auth()->user()->is_admin)
+    <button id="tambah-produk"><span class="material-icons">
+        add
+        </span></button>
+    @endif
+    <!-- Form tambah -->
+    <div id="tambah-modal-overlay">
+        <form class="modal-box" id="tambah-produk-form" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="modal-head">
+                <h3>Data Warung</h3>
+            </div>
+            <div class="modal-content">
+                <input type="text" class="nama" placeholder="Nama Warung" id="namaTambah" name="nama">
+                <input type="text" class="alamat" placeholder="Alamat" id="alamatTambah" name="alamat">
+                <input type="text" class="nohp" placeholder="No. HP" id="nohpTambah" name="nohp">
+            </div>
+            <div class="modal-footer">
+                <button id="tambah-cancel-modal" type="button">Cancel</button>
+                <button id="submit-modal" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Form edit -->
+    <div id="edit-modal-overlay">
+        <form class="modal-box" id="edit-produk-form" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="modal-head">
+                <h3>Data Warung</h3>
+            </div>
+            <div class="modal-content">
+                <input type="hidden" id="idEdit" name="id">
+                <input type="text" class="nama" placeholder="Nama Warung" id="namaEdit" name="nama">
+                <input type="text" class="alamat" placeholder="Alamat" id="alamatEdit" name="alamat">
+                <input type="text" class="nohp" placeholder="No. HP" id="nohpEdit" name="nohp">
+            </div>
+            <div class="modal-footer">
+                <button id="edit-cancel-modal" type="button">Cancel</button>
+                <button id="submit-modal" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <script src="/js/produk.js"></script>
 </body>
 </html>
 
