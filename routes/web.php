@@ -42,6 +42,9 @@ Route::post('/pencatatan/{id_warung}/{tahun}/{bulan}/edit', [C_Pencatatan::class
 Route::post('/pencatatan/{id_warung}/{tahun}/{bulan}/hapus', [C_Pencatatan::class, 'hapus'])->middleware('auth');
 
 Route::get('/produk', [C_Produk::class, 'index'])->middleware('auth');
+Route::post('/produk/tambah', [C_Produk::class, 'tambah'])->middleware('auth');
+Route::post('/produk/hapus', [C_Produk::class, 'hapus'])->middleware('auth');
+Route::post('/produk/edit', [C_Produk::class, 'edit'])->middleware('auth');
 
 Route::get('/dp', function(){
     return view('datepicker');

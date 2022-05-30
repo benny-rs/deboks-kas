@@ -53,12 +53,12 @@
                     <h3 id="produk-nama{{ $produk->id }}">{{ $produk['nama'] }}</h3>
                     <div class="produk-detail-action">
                         <div class="produk-detail">
-                            <p id="produk-harga{{ $produk->id }}">Rp {{ $produk['harga'] }}/pcs</p>
-                            <p id="produk-kuantitas{{ $produk->id }}">Tersedia : {{ $produk['kuantitas'] }}pcs</p>
+                            <p>Rp <span id="produk-harga{{ $produk->id }}">{{ $produk['harga'] }}</span>/pcs</p>
+                            <p>Tersedia : <span id="produk-kuantitas{{ $produk->id }}">{{ $produk['kuantitas'] }}</span>pcs</p>
                         </div>
                         <div class="action">
-                            <button type="button" class="edit" onclick="editProduk()"><span class="material-symbols-rounded">edit</span></button>
-                            <button type="button" class="hapus" onclick="hapusProduk()" ><span class="material-symbols-rounded">delete</span></button>
+                            <button type="button" class="edit" onclick="editProduk({{ $produk->id }})"><span class="material-symbols-rounded">edit</span></button>
+                            <button type="button" class="hapus" onclick="hapusProduk({{ $produk->id }})" ><span class="material-symbols-rounded">delete</span></button>
                         </div>
                     </div>
                 </div>
