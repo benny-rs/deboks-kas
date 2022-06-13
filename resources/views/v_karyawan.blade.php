@@ -36,7 +36,7 @@
             @if(auth()->user()->foto_profil)
                 <div class="profile-photo" style="background-image: url({{ asset('storage/'.auth()->user()->foto_profil) }});"></div>
             @else
-                <div class="profile-photo" style="background-image: url({{ asset('storage/images/user-profile/default_profile.png') }});"></div>
+                <div class="profile-photo" style="background-image: url('assets/images/default_profile.png');"></div>
             @endif
             <div id="account-dropdown">
                 <form action="/logout" method="post">
@@ -52,7 +52,7 @@
                 @if($user->foto_profil)
                     <div class="employee-photo" style="background-image: url({{ asset('storage/'.$user->foto_profil) }});"></div>
                 @else
-                    <div class="employee-photo" style="background-image: url({{ asset('storage/images/user-profile/default_profile.png') }});"></div>
+                    <div class="employee-photo" style="background-image: url('assets/images/default_profile.png');"></div>
                 @endif
                 <input type="hidden" id="employee-old-photo{{ $user->id }}" value="{{ $user->foto_profil }}">
                 <h3 class="employee-name" id="employee-name{{ $user->id }}">{{ $user->nama }}</h3>

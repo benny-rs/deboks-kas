@@ -19,7 +19,12 @@ class C_Produk extends Controller
             'nama' => 'required',
             'harga' => 'required',
             'kuantitas' => 'required',
+            'foto' => 'nullable|image|file|max:2048'
         ]);
+
+        if($request->file('foto')){
+            $validatedData['foto'] = $request->file('foto')->store('images/foto_produk');
+        }
         // return $request->all();
         // return $validatedData;
         Produk::create($validatedData);
@@ -43,7 +48,15 @@ class C_Produk extends Controller
             'nama' => 'required',
             'harga' => 'required',
             'kuantitas' => 'required',
+            'foto' => 'nullable|image|file|max:2048'
         ]);
+
+        if($request->file('foto')){
+            if($request->foto_lama){
+                Storage::delete($request->foto_lama);
+            }
+            $validatedData['foto'] = $request->file('foto')->store('images/foto_produk');
+        }
         // return $request->all();
         // return $validatedData;
         Produk::where('id', $request->id)->update($validatedData);

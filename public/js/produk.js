@@ -78,6 +78,7 @@ function editProduk(id) {
     $('#namaEdit').val($(`#produk-nama${id}`).html());
     $('#hargaEdit').val($(`#produk-harga${id}`).html());
     $('#kuantitasEdit').val($(`#produk-kuantitas${id}`).html());
+    $('#foto_lamaEdit').val($(`#produk-old-photo${id}`).val());
     $('#edit-modal-overlay').show();
 }
 

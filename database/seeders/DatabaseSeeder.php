@@ -39,7 +39,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'budi@mail.com',
             'alamat' => 'Jalan Raden Patah no 81',
             'nohp' => '081234567890',
-            'foto_profil' => 'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+            // 'foto_profil' => 'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
         ]);
         
         User::create([
@@ -50,7 +50,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'andriyan@mail.com',
             'alamat' => 'Jalan Kian Santang no 70 Padjajaran',
             'nohp' => '081234567890',
-            'foto_profil' => 'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+            // 'foto_profil' => 'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
         ]);
         
         User::create([
@@ -61,7 +61,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'handoko@mail.com',
             'alamat' => 'Jalan Merak no 39 Banjarmasin',
             'nohp' => '081234567890',
-            'foto_profil' => 'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+            // 'foto_profil' => 'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
         ]);
         
         Pencatatan::create([
@@ -86,14 +86,14 @@ class DatabaseSeeder extends Seeder
             'nama' => 'Keripik Pelepah Pisang Rasa Balado',
             'harga' => 5000,
             'kuantitas' => 30,
-            'foto' => 'https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070'
+            // 'foto' => 'https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070'
         ]);
 
         Produk::create([
             'nama' => 'Keripik Pelepah Pisang Rasa Original',
             'harga' => 4000,
             'kuantitas' => 50,
-            'foto' => 'https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070'
+            // 'foto' => 'https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070'
         ]);
     }
 }

@@ -1,6 +1,10 @@
 @foreach($data as $produk)
     <div class="card">
-        <div class="produk-img" style="background-image: url(https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070);"></div>
+        @if($produk->foto)
+            <div class="produk-img" style="background-image: url({{ asset('storage/'.$produk->foto) }});"></div>
+        @else
+            <div class="produk-img" style="background-image: url('assets/images/default_product.jpg');"></div>
+        @endif
         <div class="produk-content">
             <h3 id="produk-nama{{ $produk->id }}">{{ $produk['nama'] }}</h3>
             <div class="produk-detail-action">

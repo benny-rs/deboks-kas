@@ -35,7 +35,7 @@
             @if(auth()->user()->foto_profil)
                 <div class="profile-photo" style="background-image: url({{ asset('storage/'.auth()->user()->foto_profil) }});"></div>
             @else
-                <div class="profile-photo" style="background-image: url({{ asset('storage/images/user-profile/default_profile.png') }});"></div>
+                <div class="profile-photo" style="background-image: url('assets/images/default_profile.png');"></div>
             @endif
             <div id="account-dropdown">
                 <form action="/logout" method="post">
@@ -48,7 +48,12 @@
     <div class="container">
         @foreach($data as $produk)
             <div class="card">
-                <div class="produk-img" style="background-image: url(https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070);"></div>
+                @if($produk->foto)
+                    <div class="produk-img" style="background-image: url({{ asset('storage/'.$produk->foto) }});"></div>
+                @else
+                    <div class="produk-img" style="background-image: url('assets/images/default_product.jpg');"></div>
+                @endif
+                <input type="hidden" id="produk-old-photo{{ $produk->id }}" value="{{ $produk->foto }}">
                 <div class="produk-content">
                     <h3 id="produk-nama{{ $produk->id }}">{{ $produk['nama'] }}</h3>
                     <div class="produk-detail-action">
@@ -82,6 +87,8 @@
                 <input type="text" class="nama" placeholder="Nama Produk" id="namaTambah" name="nama">
                 <input type="text" class="harga" placeholder="Harga" id="hargaTambah" name="harga">
                 <input type="text" class="kuantitas" placeholder="Kuantitas" id="kuantitasTambah" name="kuantitas">
+                <label for="fotoTambah">Profile Photo</label>
+                <input type="file" name="foto" id="fotoTambah">
             </div>
             <div class="modal-footer">
                 <button id="tambah-cancel-modal" type="button">Cancel</button>
@@ -102,6 +109,9 @@
                 <input type="text" class="nama" placeholder="Nama Produk" id="namaEdit" name="nama">
                 <input type="text" class="harga" placeholder="Harga" id="hargaEdit" name="harga">
                 <input type="text" class="kuantitas" placeholder="Kuantitas" id="kuantitasEdit" name="kuantitas">
+                <label for="fotoEdit">Profile Photo</label>
+                <input type="file" name="foto" id="fotoEdit">
+                <input type="hidden" name="foto_lama" id="foto_lamaEdit">
             </div>
             <div class="modal-footer">
                 <button id="edit-cancel-modal" type="button">Cancel</button>
