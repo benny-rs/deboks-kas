@@ -5,6 +5,7 @@
         @else
             <div class="produk-img" style="background-image: url('assets/images/default_product.jpg');"></div>
         @endif
+        <input type="hidden" id="produk-old-photo{{ $produk->id }}" value="{{ $produk->foto }}">
         <div class="produk-content">
             <h3 id="produk-nama{{ $produk->id }}">{{ $produk['nama'] }}</h3>
             <div class="produk-detail-action">

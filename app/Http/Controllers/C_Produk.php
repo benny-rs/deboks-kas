@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Produk;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class C_Produk extends Controller
 {
@@ -35,6 +36,9 @@ class C_Produk extends Controller
     }
 
     public function hapus(Request $request){
+        if(Produk::find($request->id)->foto){
+            Storage::delete(Produk::find($request->id)->foto);
+        }
         Produk::destroy($request->id);
 
         // return 'masuk hapus';
