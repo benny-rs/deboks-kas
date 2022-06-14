@@ -23,6 +23,7 @@ class C_Home extends Controller
     }
 
     public function chart(){
-        return M_Pencatatan::whereMonth('created_at', idate('m'))->pluck('produk_terbeli')->toArray();
+        // return M_Pencatatan::whereMonth('created_at', idate('m'))->pluck('produk_terbeli')->toArray();
+        return M_Pencatatan::select(DB::raw("(sum(produk_terbeli)) as total_produk_terbeli"),DB::raw("(DATE_FORMAT(created_at, '%m')) as month"))->whereYear('created_at',idate('Y'))->orderBy('created_at')->groupBy(DB::raw("DATE_FORMAT(created_at, '%m')"))->get();
     }
 }

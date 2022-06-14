@@ -11,16 +11,19 @@ $(document).ready(async function () {
         "/chart",
         function (data) {
             // $('.container').html(data);
+            const labelData = data.map((val)=>`Bulan ${val.month}`);
+            const valueData = data.map((val)=>val.total_produk_terbeli)
             console.log(data)
             const ctx = document.getElementById('myChart').getContext('2d');
             const myChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['Minggu 1', 'Minggu 2', 'Minggu 3', 'Minggu 4'],
+                    // labels: ['Minggu 1', 'Minggu 2', 'Minggu 3', 'Minggu 4'],
+                    labels: labelData,
                     datasets: [{
                         label: 'pcs',
-                        // data: [35, 37, 45, 30, 50, 45],
-                        data: data,
+                        // data: [35, 37, 45, 30],
+                        data: valueData,
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)',
