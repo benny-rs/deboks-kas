@@ -23,6 +23,6 @@ class C_Home extends Controller
     }
 
     public function chart(){
-        return M_Pencatatan::pluck('produk_terbeli')->toArray();
+        return M_Pencatatan::whereMonth('created_at', idate('m'))->pluck('produk_terbeli')->toArray();
     }
 }
