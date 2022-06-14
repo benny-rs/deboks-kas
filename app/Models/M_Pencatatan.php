@@ -2,14 +2,15 @@
 
 namespace App\Models;
 
-use App\Models\User;
-use App\Models\Warung;
+use App\Models\M_User;
+use App\Models\M_Warung;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 // use App\Models\Warung;
 
-class Pencatatan extends Model
+class M_Pencatatan extends Model
 {
+    protected $table = 'pencatatans';
     use HasFactory;
     protected $guarded = ['id'];
 
@@ -24,7 +25,7 @@ class Pencatatan extends Model
      */
     public function warung()
     {
-        return $this->belongsTo(Warung::class, 'id_warung');
+        return $this->belongsTo(M_Warung::class, 'id_warung');
     }
 
     /**
@@ -34,6 +35,6 @@ class Pencatatan extends Model
      */
     public function user()
     {
-        return $this->belongsTo(User::class, 'id_user');
+        return $this->belongsTo(M_User::class, 'id_user');
     }
 }

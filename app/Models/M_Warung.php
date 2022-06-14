@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
-use App\Models\Pencatatan;
+use App\Models\M_Pencatatan;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Warung extends Model
+class M_Warung extends Model
 {
+    protected $table = 'warungs';
     use HasFactory;
     protected $guarded = ['id'];
 
@@ -18,6 +19,6 @@ class Warung extends Model
      */
     public function pencatatan()
     {
-        return $this->hasMany(Pencatatan::class, 'id_warung', 'id');
+        return $this->hasMany(M_Pencatatan::class, 'id_warung', 'id');
     }
 }

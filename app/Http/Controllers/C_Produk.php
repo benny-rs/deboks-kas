@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Produk;
+use App\Models\M_Produk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -11,7 +11,7 @@ class C_Produk extends Controller
     //
     public function index(){
         return view('v_produk', [
-            'data' => Produk::all()
+            'data' => M_Produk::all()
         ]);
     }
 
@@ -28,22 +28,22 @@ class C_Produk extends Controller
         }
         // return $request->all();
         // return $validatedData;
-        Produk::create($validatedData);
+        M_Produk::create($validatedData);
         
         return view('v_update_produk', [
-            "data" => Produk::get()
+            "data" => M_Produk::get()
         ]);
     }
 
     public function hapus(Request $request){
-        if(Produk::find($request->id)->foto){
-            Storage::delete(Produk::find($request->id)->foto);
+        if(M_Produk::find($request->id)->foto){
+            Storage::delete(M_Produk::find($request->id)->foto);
         }
-        Produk::destroy($request->id);
+        M_Produk::destroy($request->id);
 
         // return 'masuk hapus';
         return view('v_update_produk', [
-            "data" => Produk::get()
+            "data" => M_Produk::get()
         ]);
     }
 
@@ -63,10 +63,10 @@ class C_Produk extends Controller
         }
         // return $request->all();
         // return $validatedData;
-        Produk::where('id', $request->id)->update($validatedData);
+        M_Produk::where('id', $request->id)->update($validatedData);
         
         return view('v_update_produk', [
-            "data" => Produk::get()
+            "data" => M_Produk::get()
         ]);
     }
 }

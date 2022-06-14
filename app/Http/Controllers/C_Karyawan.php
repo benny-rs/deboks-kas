@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\M_User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
@@ -12,7 +12,7 @@ class C_Karyawan extends Controller
     //
     public function index(){
         return view('v_karyawan', [
-            "data" => User::where('is_admin',false)->get()
+            "data" => M_User::where('is_admin',false)->get()
         ]);
     }
 
@@ -35,22 +35,22 @@ class C_Karyawan extends Controller
         }
 
         $validatedData['password'] = Hash::make($validatedData['password']);
-        User::create($validatedData);
+        M_User::create($validatedData);
         
         return view('v_update_karyawan', [
-            "data" => User::where('is_admin',false)->get()
+            "data" => M_User::where('is_admin',false)->get()
         ]);
     }
 
     public function hapus(Request $request){
-        if(User::find($request->id)->foto_profil){
-            Storage::delete(User::find($request->id)->foto_profil);
+        if(M_User::find($request->id)->foto_profil){
+            Storage::delete(M_User::find($request->id)->foto_profil);
         }
-        User::destroy($request->id);
+        M_User::destroy($request->id);
 
         // return 'masuk hapus';
         return view('v_update_karyawan', [
-            "data" => User::where('is_admin',false)->get()
+            "data" => M_User::where('is_admin',false)->get()
         ]);
     }
 
@@ -75,12 +75,12 @@ class C_Karyawan extends Controller
         if($request->password){
             $validatedData['password'] = Hash::make($validatedData['password']);
         }else{
-            $validatedData['password'] = User::find($request->id)->password;
+            $validatedData['password'] = M_User::find($request->id)->password;
         };
-        User::where('id', $request->id)->update($validatedData);
+        M_User::where('id', $request->id)->update($validatedData);
         
         return view('v_update_karyawan', [
-            "data" => User::where('is_admin',false)->get()
+            "data" => M_User::where('is_admin',false)->get()
         ]);
     }
 }

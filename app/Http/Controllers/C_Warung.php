@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Warung;
+use App\Models\M_Warung;
 
 class C_Warung extends Controller
 {
     //
     public function index(){
         return view('v_warung', [
-            "data" => Warung::all()
+            "data" => M_Warung::all()
         ]);
     }
 
@@ -22,19 +22,19 @@ class C_Warung extends Controller
         ]);
         // return $request->all();
         // return $validatedData;
-        Warung::create($validatedData);
+        M_Warung::create($validatedData);
         
         return view('v_update_warung', [
-            "data" => Warung::get()
+            "data" => M_Warung::get()
         ]);
     }
 
     public function hapus(Request $request){
-        Warung::destroy($request->id);
+        M_Warung::destroy($request->id);
 
         // return 'masuk hapus';
         return view('v_update_warung', [
-            "data" => Warung::get()
+            "data" => M_Warung::get()
         ]);
     }
 
@@ -46,10 +46,10 @@ class C_Warung extends Controller
         ]);
         // return $request->all();
         // return $validatedData;
-        Warung::where('id', $request->id)->update($validatedData);
+        M_Warung::where('id', $request->id)->update($validatedData);
         
         return view('v_update_warung', [
-            "data" => Warung::get()
+            "data" => M_Warung::get()
         ]);
     }
 }
