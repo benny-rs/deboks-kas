@@ -70,7 +70,9 @@
                 <th>Pemasukan</th>
                 <th>Pengeluaran</th>
                 <th>Pendapatan</th>
-                <th>Action</th>
+                @if(!auth()->user()->is_admin)
+                    <th>Action</th>
+                @endif
             </tr>
             @foreach($data as $pencatatan)
                 <tr>
@@ -79,10 +81,12 @@
                     <td class="pencatatan-pemasukan" id="pencatatan-pemasukan{{ $pencatatan->id }}">Rp {{ $pencatatan->pemasukan }}</td>
                     <td class="pencatatan-pengeluaran" id="pencatatan-pengeluaran{{ $pencatatan->id }}">Rp {{ $pencatatan->pengeluaran }}</td>
                     <td>Rp {{ $pencatatan->pemasukan-$pencatatan->pengeluaran }}</td>
-                    <td class="action">
-                        <button type="button" class="edit" onclick="editPencatatan({{ $pencatatan->id }})"><span class="material-symbols-rounded">edit</span></button>
-                        <button type="button" class="hapus" onclick="hapusPencatatan({{ $pencatatan->id }})" ><span class="material-symbols-rounded">delete</span></button>
-                    </td>
+                    @if(!auth()->user()->is_admin)
+                        <td class="action">
+                            <button type="button" class="edit" onclick="editPencatatan({{ $pencatatan->id }})"><span class="material-symbols-rounded">edit</span></button>
+                            <button type="button" class="hapus" onclick="hapusPencatatan({{ $pencatatan->id }})" ><span class="material-symbols-rounded">delete</span></button>
+                        </td>
+                    @endif
                 </tr>
             @endforeach
             <tr>
