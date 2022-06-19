@@ -80,6 +80,7 @@
                         <h3>{{ $warung->nama }}</h3>
                         <p>{{ $warung->nohp }}</p>
                         <p>{{ $warung->alamat }}</p>
+                        <p>Produk terbeli : {{ $warung->total }}</p>
                         <a class="btn-warung" href="/pencatatan/{{ $warung->id }}/{{ idate('Y') }}/{{ idate('m') }}">PENCATATAN</a>
                     </div>
                 </div>

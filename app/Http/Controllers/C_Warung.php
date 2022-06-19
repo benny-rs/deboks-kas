@@ -2,15 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\M_Warung;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class C_Warung extends Controller
 {
     //
     public function index(){
+        $warung = $warung = DB::table('warungs')
+        ->select('warungs.*', DB::raw("sum(`pencatatans`.`produk_terbeli`) as total"))
+        ->leftJoin('pencatatans','warungs.id','=','pencatatans.id_warung')
+        ->groupBy('warungs.id')
+        ->orderBy('total','desc')
+        ->get();
         return view('v_warung', [
-            "data" => M_Warung::all()
+            "data" => $warung
         ]);
     }
 

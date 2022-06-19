@@ -100,7 +100,7 @@ nav{
 .card {
     /* min-width: 170px;
     max-width: 200px; */
-    max-height: 170px;
+    max-height: 180px;
     border-radius: var(--border-radius);
     /* aspect-ratio: 1; */
     box-shadow: var(--box-shadow);
