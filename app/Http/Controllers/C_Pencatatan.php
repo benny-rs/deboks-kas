@@ -18,7 +18,9 @@ class C_Pencatatan extends Controller
     public function index($id_warung, $tahun, $bulan){
         return view('v_pencatatan', [
             "warung" => M_Warung::find($id_warung),
-            "data" => M_Pencatatan::where('id_warung',$id_warung)->whereMonth('created_at', $bulan)->whereYear('created_at',$tahun)->get()
+            "data" => M_Pencatatan::where('id_warung',$id_warung)->whereMonth('created_at', $bulan)->whereYear('created_at',$tahun)->get(),
+            "tahun" => $tahun,
+            "bulan" => $bulan
         ]);
     }
 

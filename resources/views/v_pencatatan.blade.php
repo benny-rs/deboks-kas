@@ -99,9 +99,9 @@
         </table>
     </div>
     @if(!auth()->user()->is_admin)
-    <button id="tambah-pencatatan"><span class="material-icons">
-        add
-        </span></button>
+        @if($tahun==idate('Y') and $bulan==idate('m'))
+            <button id="tambah-pencatatan"><span class="material-icons">add</span></button>
+        @endif
     @endif
     <!-- Form tambah -->
     <div id="tambah-modal-overlay">
